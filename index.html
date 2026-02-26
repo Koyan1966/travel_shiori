@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅のしおり｜長野様 ヨーロッパ旅行 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2f5e;
+  --gold: #c9a84c;
+  --light-gold: #fdf6e3;
+  --cream: #fafaf7;
+  --gray: #666;
+  --light-gray: #f5f5f0;
+  --accent: #e74c3c;
+  --green: #27ae60;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: #222;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ===== COVER ===== */
+.cover {
+  background: linear-gradient(160deg, var(--navy) 0%, #2c4a8a 50%, #1a3a6e 100%);
+  color: white;
+  padding: 60px 24px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  border: 2px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -30px;
+  width: 160px; height: 160px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.cover-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.cover h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.cover-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+.cover-dates {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 8px 24px;
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+.cover-names {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ===== NAV TABS ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  padding: 12px 16px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover, .nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ===== SECTION ===== */
+.section {
+  padding: 0 0 8px;
+}
+.section-header {
+  background: var(--navy);
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-header .emoji { font-size: 20px; }
+.section-header h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sub-header {
+  background: var(--light-gold);
+  border-left: 4px solid var(--gold);
+  padding: 10px 16px;
+  margin: 12px 16px 8px;
+  border-radius: 0 6px 6px 0;
+}
+.sub-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.content { padding: 0 16px; }
+
+/* ===== SUMMARY CARD ===== */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 12px 16px;
+}
+.summary-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.summary-card .label {
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.summary-card .value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.summary-card.full { grid-column: 1 / -1; }
+
+/* ===== TIMELINE ===== */
+.timeline { padding: 8px 16px; }
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.timeline-item:nth-child(even) { background: var(--light-gold); }
+.timeline-time {
+  flex-shrink: 0;
+  width: 60px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.timeline-time .jp-time {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--gray);
+}
+.timeline-body { flex: 1; }
+.timeline-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2px;
+}
+.timeline-note {
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+/* ===== TABLE ===== */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 13px;
+}
+.info-table th {
+  background: var(--navy);
+  color: white;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+}
+.info-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.info-table tr:nth-child(even) td { background: var(--light-gold); }
+.info-table tr:nth-child(odd) td { background: white; }
+.info-table .highlight { color: var(--accent); font-weight: 700; }
+.info-table .badge {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 11px;
+}
+.info-table .badge-gold {
+  background: var(--gold);
+  color: white;
+}
+
+/* ===== ALERT BOX ===== */
+.alert {
+  margin: 8px 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.alert-red {
+  background: #fdf0f0;
+  border-left: 4px solid var(--accent);
+  color: #c0392b;
+}
+.alert-blue {
+  background: #eef4ff;
+  border-left: 4px solid var(--navy);
+  color: var(--navy);
+}
+.alert-gold {
+  background: var(--light-gold);
+  border-left: 4px solid var(--gold);
+  color: #7a5c00;
+}
+.alert strong { display: block; margin-bottom: 2px; font-size: 13px; }
+
+/* ===== MAP LINK BUTTON ===== */
+.map-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 4px 0;
+  text-decoration: none;
+  color: #222;
+  transition: all 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.map-btn:active { background: var(--light-gold); }
+.map-btn .map-icon { font-size: 20px; flex-shrink: 0; }
+.map-btn .map-info { flex: 1; }
+.map-btn .map-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+.map-btn .map-addr { font-size: 11px; color: var(--gray); }
+.map-btn .map-arrow { color: var(--gold); font-size: 16px; }
+.map-btn .map-rating { font-size: 11px; color: #f39c12; }
+
+.map-grid { padding: 8px 16px; display: flex; flex-direction: column; gap: 6px; }
+
+/* ===== BULLET LIST ===== */
+.bullet-list { padding: 8px 16px; }
+.bullet-list li {
+  list-style: none;
+  padding: 5px 0 5px 20px;
+  position: relative;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.5;
+}
+.bullet-list li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+/* ===== FLIGHT CARD ===== */
+.flight-card {
+  background: white;
+  border-radius: 12px;
+  margin: 8px 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.flight-card-header {
+  background: var(--navy);
+  color: white;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-route {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 10px;
+}
+.flight-city { text-align: center; }
+.flight-city .city-code { font-size: 22px; font-weight: 700; color: var(--navy); }
+.flight-city .city-name { font-size: 10px; color: var(--gray); }
+.flight-city .time { font-size: 16px; font-weight: 700; color: #222; margin-top: 2px; }
+.flight-city .date { font-size: 10px; color: var(--gray); }
+.flight-arrow {
+  flex: 1;
+  text-align: center;
+  color: var(--gold);
+  position: relative;
+}
+.flight-arrow::before {
+  content: '';
+  display: block;
+  border-top: 1.5px solid var(--gold);
+  margin: 10px 0 4px;
+}
+.flight-arrow .duration { font-size: 11px; color: var(--gray); }
+.flight-meta {
+  padding: 0 14px 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.flight-tag {
+  background: var(--light-gray);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: #555;
+}
+.flight-tag.seat { background: var(--light-gold); color: var(--navy); font-weight: 700; }
+
+/* ===== CRUISE INFO ===== */
+.cruise-card {
+  background: linear-gradient(135deg, var(--navy) 0%, #2c4a8a 100%);
+  color: white;
+  border-radius: 12px;
+  margin: 8px 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(26,47,94,0.3);
+}
+.cruise-card h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--gold);
+}
+.cruise-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 13px;
+}
+.cruise-info-row:last-child { border-bottom: none; }
+.cruise-info-row .key { color: rgba(255,255,255,0.6); }
+.cruise-info-row .val { font-weight: 700; color: white; }
+
+/* ===== PORT CARD ===== */
+.port-card {
+  background: white;
+  border-radius: 10px;
+  margin: 8px 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.port-card-header {
+  background: var(--light-gold);
+  border-left: 4px solid var(--gold);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.port-card-header .port-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.port-card-header .port-date { font-size: 11px; color: var(--gray); }
+.port-card-body { padding: 10px 14px; }
+.port-card-body .tour-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.port-card-body p { font-size: 13px; color: #444; margin-bottom: 4px; }
+
+/* ===== RESTAURANT CARD ===== */
+.restaurant-card {
+  background: white;
+  border-radius: 10px;
+  margin: 4px 0;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  gap: 10px;
+}
+.restaurant-emoji { font-size: 28px; flex-shrink: 0; }
+.restaurant-info { flex: 1; }
+.restaurant-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.restaurant-rating { font-size: 11px; color: #f39c12; margin: 2px 0; }
+.restaurant-meta { font-size: 11px; color: var(--gray); }
+.restaurant-note { font-size: 12px; color: #444; margin-top: 4px; line-height: 1.4; }
+.restaurant-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.restaurant-tag {
+  background: var(--light-gray);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 10px;
+  color: #555;
+}
+.restaurant-tag.reservation { background: #fff0f0; color: var(--accent); }
+
+/* ===== WIFI TABLE ===== */
+.wifi-table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0;
+  border-collapse: collapse;
+}
+.wifi-table th {
+  background: var(--navy);
+  color: white;
+  padding: 8px 10px;
+  font-size: 12px;
+  text-align: left;
+}
+.wifi-table td {
+  padding: 9px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+.wifi-table tr:nth-child(odd) td { background: var(--light-gold); }
+.wifi-table tr:nth-child(even) td { background: white; }
+.wifi-table .price { font-weight: 700; color: var(--accent); }
+.wifi-table .recommended { font-weight: 700; color: var(--green); }
+
+/* ===== DIVIDER ===== */
+.divider { height: 8px; background: var(--light-gray); margin: 8px 0; }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 24px;
+  font-size: 11px;
+  margin-top: 16px;
+}
+.footer .footer-title {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* ===== TICKET INFO ===== */
+.ticket-box {
+  background: white;
+  border: 1.5px solid var(--light-gold);
+  border-radius: 10px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+.ticket-box-header {
+  background: var(--light-gold);
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.ticket-box-body { padding: 10px 12px; }
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 3px 0;
+  border-bottom: 1px solid #f5f5f0;
+}
+.ticket-row:last-child { border-bottom: none; }
+.ticket-row .k { color: var(--gray); }
+.ticket-row .v { font-weight: 700; color: var(--navy); }
+
+/* ===== STEP LIST ===== */
+.step-list { padding: 8px 16px; }
+.step-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 30px;
+  bottom: -8px;
+  width: 1px;
+  background: var(--light-gray);
+}
+.step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 1;
+}
+.step-body { flex: 1; padding-top: 4px; }
+.step-title { font-size: 13px; font-weight: 700; color: #222; }
+.step-note { font-size: 11px; color: var(--gray); margin-top: 2px; line-height: 1.4; }
+
+/* Util */
+.px16 { padding-left: 16px; padding-right: 16px; }
+.mt8 { margin-top: 8px; }
+.mb8 { margin-bottom: 8px; }
+.text-gold { color: var(--gold); }
+.text-red { color: var(--accent); font-weight: 700; }
+.text-navy { color: var(--navy); font-weight: 700; }
+.text-gray { color: var(--gray); font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Travel Itinerary 2026</div>
+  <h1>🌊 地中海<br>ヨーロッパの旅</h1>
+  <div class="cover-sub">バルセロナ・地中海クルーズ・アテネ</div>
+  <div class="cover-dates">2026年4月27日（月）〜 5月11日（月）</div>
+  <div class="cover-names">長野 康司様・路子様</div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#overview">概要</a>
+  <a href="#departure">出発</a>
+  <a href="#barcelona">バルセロナ</a>
+  <a href="#cruise">クルーズ</a>
+  <a href="#ports">寄港地</a>
+  <a href="#athens">アテネ</a>
+  <a href="#guide">船内ガイド</a>
+  <a href="#checklist">持ち物</a>
+</nav>
+
+<!-- ===== OVERVIEW ===== -->
+<div class="section" id="overview">
+  <div class="section-header">
+    <span class="emoji">📋</span>
+    <h2>旅程概要</h2>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="label">航空会社</div>
+      <div class="value">カタール航空<br><span style="font-size:11px;color:var(--gray)">PNR: 8E5LVG</span></div>
+    </div>
+    <div class="summary-card">
+      <div class="label">クルーズ予約</div>
+      <div class="value">Costa Fortuna<br><span style="font-size:11px;color:var(--gray)">No. 34749189</span></div>
+    </div>
+    <div class="summary-card">
+      <div class="label">康司様 座席（羽田便）</div>
+      <div class="value">46C</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">路子様 座席（羽田便）</div>
+      <div class="value">46A</div>
+    </div>
+    <div class="summary-card full">
+      <div class="label">キャビン（クルーズ）</div>
+      <div class="value">7346号室（バルコニー付き B2）｜ディナー 18:30〜 ミケランジェロ1965レストラン デッキ3</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sub-header"><h3>📅 全行程早見表</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">4/27<div class="jp-time">月</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">成田出発 → ドーハ経由</div>
+        <div class="timeline-note">QR809 15:25発 / ドーハ21:55着</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">4/28<div class="jp-time">火</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">ドーハ → バルセロナ到着</div>
+        <div class="timeline-note">QR145 07:05発 / バルセロナ13:05着</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">4/29<div class="jp-time">水</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">バルセロナ観光</div>
+        <div class="timeline-note">サグラダ・ファミリア（9:15）、グエル公園（15:30）</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">4/30<div class="jp-time">木</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">Costa Fortuna 乗船</div>
+        <div class="timeline-note">バルセロナ港より出航</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/1<div class="jp-time">金</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">マルセイユ（フランス）</div>
+        <div class="timeline-note">★予約済ツアー 08:00〜12:00</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/2<div class="jp-time">土</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">サヴォーナ → モナコツアー</div>
+        <div class="timeline-note">★予約済ツアー 08:00〜15:00</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/3<div class="jp-time">日</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">チビタベッキア → ローマ</div>
+        <div class="timeline-note">★予約済ツアー 08:00〜15:00</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/4<div class="jp-time">月</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">メッシーナ（シチリア島）</div>
+        <div class="timeline-note">自由行動</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/5<div class="jp-time">火</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">ヴァレッタ（マルタ）</div>
+        <div class="timeline-note">自由行動</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/6<div class="jp-time">水</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">終日航海日 🌊</div>
+        <div class="timeline-note">地中海を航行</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/7<div class="jp-time">木</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">ヘラクリオン（クレタ島）</div>
+        <div class="timeline-note">自由行動（上陸税 €3/人）</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/8<div class="jp-time">金</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">ピレウス（アテネ）着 → 下船</div>
+        <div class="timeline-note">07:00着 / NLH モナスティラキへ</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/9<div class="jp-time">土</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">アテネ観光</div>
+        <div class="timeline-note">アクロポリス・プラカ地区など</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/10<div class="jp-time">日</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">アテネ出発 → ドーハ経由</div>
+        <div class="timeline-note">QR208 19:35発</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">5/11<div class="jp-time">月</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">🏠 羽田空港 到着・帰国</div>
+        <div class="timeline-note">QR4850 23:55着</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== DEPARTURE ===== -->
+<div class="section" id="departure">
+  <div class="section-header">
+    <span class="emoji">✈️</span>
+    <h2>出発（4月27日・28日）</h2>
+  </div>
+
+  <div class="sub-header"><h3>往路フライト</h3></div>
+
+  <div style="padding: 8px 16px; display:flex; flex-direction:column; gap:8px;">
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <span>QR809 カタール航空</span>
+        <span>4月27日（月）</span>
+      </div>
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="city-code">NRT</div>
+          <div class="city-name">成田 T2</div>
+          <div class="time">15:25</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="duration">12h 30m</div>
+          ✈
+        </div>
+        <div class="flight-city">
+          <div class="city-code">DOH</div>
+          <div class="city-name">ドーハ</div>
+          <div class="time">21:55</div>
+          <div class="date">同日</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag">エコノミー</span>
+        <span class="flight-tag">手荷物 30kg/人</span>
+        <span class="flight-tag">トランジット 約9時間</span>
+      </div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <span>QR145 カタール航空</span>
+        <span>4月28日（火）</span>
+      </div>
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="city-code">DOH</div>
+          <div class="city-name">ドーハ</div>
+          <div class="time">07:05</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="duration">7h 00m</div>
+          ✈
+        </div>
+        <div class="flight-city">
+          <div class="city-code">BCN</div>
+          <div class="city-name">バルセロナ T1</div>
+          <div class="time">13:05</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag">エコノミー</span>
+        <span class="flight-tag">手荷物 30kg/人</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-gold px16">
+    <strong>⚠️ ドーハ トランジット 約9時間</strong>
+    21:55着 → 翌07:05発。Al Maha Lounge（プライオリティパス利用可）でシャワー・食事・仮眠を。24時間営業。
+  </div>
+
+  <div class="sub-header"><h3>🛋️ ラウンジ活用（プライオリティパス）</h3></div>
+  <div style="padding: 0 16px;">
+    <table class="info-table">
+      <tr><th>場所</th><th>ラウンジ</th><th>利用可否</th></tr>
+      <tr><td>成田 T2<br><span style="font-size:10px;color:var(--gray)">出国前</span></td><td>IASS Executive Lounge 1<br><span style="font-size:11px;color:var(--gray)">4F・飲食・Wi-Fi</span></td><td><span class="badge" style="background:var(--green)">✅ 可</span></td></tr>
+      <tr><td>成田 T2<br><span style="font-size:10px;color:var(--gray)">出国後</span></td><td>IASS Superior Lounge<br>虚空 -KoCoo-</td><td><span class="badge" style="background:var(--green)">✅ 可</span></td></tr>
+      <tr><td>ドーハ</td><td>Al Maha Lounge<br><span style="font-size:11px;color:var(--gray)">シャワー・食事・24h</span></td><td><span class="badge" style="background:var(--green)">✅ 可</span></td></tr>
+    </table>
+    <div class="alert alert-red" style="margin: 8px 0;">
+      ⚠️ 2025年4月以降、ダイナースクラブのPPは国内レストラン・リフレッシュ施設は利用不可。ラウンジのみ可。
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== BARCELONA ===== -->
+<div class="section" id="barcelona">
+  <div class="section-header">
+    <span class="emoji">🏛️</span>
+    <h2>バルセロナ（4/28〜30）</h2>
+  </div>
+
+  <div class="summary-grid" style="padding: 12px 16px;">
+    <div class="summary-card full">
+      <div class="label">ホテル</div>
+      <div class="value">Hotel Barcelona Center</div>
+      <div style="font-size:11px;color:var(--gray);margin-top:2px;">Carrer de Balmes 103 ｜ Booking: 25100353319</div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>4月28日（火）到着日　日没 20:44</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">13:05<div class="jp-time">日本 19:05</div></div>
+      <div class="timeline-body"><div class="timeline-title">バルセロナ空港（T1）到着</div><div class="timeline-note">QR145</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00頃<div class="jp-time">日本 21:00</div></div>
+      <div class="timeline-body"><div class="timeline-title">エアロバス A1 → 市内へ</div><div class="timeline-note">T1 → プラサ・デ・カタルーニャ 約35分 €6.75/人</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:00頃<div class="jp-time">日本 22:00</div></div>
+      <div class="timeline-body"><div class="timeline-title">ホテルチェックイン</div><div class="timeline-note">Hotel Barcelona Center</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:30頃<div class="jp-time">日本 翌1:30</div></div>
+      <div class="timeline-body"><div class="timeline-title">🍽️ アーリーディナー</div><div class="timeline-note">Cerveceria Catalana など</div></div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>4月29日（水）観光日　日没 20:45</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">09:15<div class="jp-time">日本 16:15</div></div>
+      <div class="timeline-body"><div class="timeline-title">⭐ サグラダ・ファミリア入場</div><div class="timeline-note">チケット予約済（Code: 94488645）。地下鉄L2/L5 Sagrada Família駅</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:30頃<div class="jp-time">日本 19:30</div></div>
+      <div class="timeline-body"><div class="timeline-title">🍽️ ランチ</div><div class="timeline-note">グラシア地区のカフェ</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:30<div class="jp-time">日本 22:30</div></div>
+      <div class="timeline-body"><div class="timeline-title">⭐ グエル公園入場</div><div class="timeline-note">チケット予約済（Locator: 700809431070）。⚠️ 30分以内に入場。バス24番orL3 Lesseps駅徒歩15分</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">18:30頃<div class="jp-time">日本 翌1:30</div></div>
+      <div class="timeline-body"><div class="timeline-title">🍽️ アーリーディナー</div><div class="timeline-note">La Pepita / Bar del Pla など</div></div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🍽️ バルセロナ おすすめレストラン</h3></div>
+  <div class="map-grid">
+    <div class="restaurant-card">
+      <div class="restaurant-emoji">🍺</div>
+      <div class="restaurant-info">
+        <div class="restaurant-name">Cerveceria Catalana</div>
+        <div class="restaurant-rating">⭐ 4.4（23,658件）</div>
+        <div class="restaurant-meta">Carrer de Mallorca 236 ｜ €€ €15〜25</div>
+        <div class="restaurant-note">バルセロナ随一の人気タパスバー。ロブスターライス・牛フィレとフォアグラのモンタディート</div>
+        <div class="restaurant-tags">
+          <span class="restaurant-tag">予約不可 18時台推奨</span>
+        </div>
+      </div>
+    </div>
+    <a class="map-btn" href="https://maps.apple.com/?q=Cerveceria+Catalana+Barcelona" target="_blank">
+      <span class="map-icon">🗺️</span>
+      <div class="map-info"><div class="map-name">Cerveceria Catalana</div><div class="map-addr">地図を開く</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+
+    <div class="restaurant-card">
+      <div class="restaurant-emoji">🥩</div>
+      <div class="restaurant-info">
+        <div class="restaurant-name">La Pepita</div>
+        <div class="restaurant-rating">⭐ 4.5（7,403件）</div>
+        <div class="restaurant-meta">Carrer de Còrsega 343 ｜ €€ €15〜25</div>
+        <div class="restaurant-note">グラシア地区。ビーフカルパッチョ・フォアグラ入りタパス。グエル公園帰りに最適</div>
+        <div class="restaurant-tags">
+          <span class="restaurant-tag reservation">要予約 +34 932 384 893</span>
+        </div>
+      </div>
+    </div>
+    <a class="map-btn" href="https://maps.apple.com/?q=La+Pepita+Barcelona" target="_blank">
+      <span class="map-icon">🗺️</span>
+      <div class="map-info"><div class="map-name">La Pepita</div><div class="map-addr">地図を開く</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+
+    <div class="restaurant-card">
+      <div class="restaurant-emoji">🍷</div>
+      <div class="restaurant-info">
+        <div class="restaurant-name">Bar del Pla</div>
+        <div class="restaurant-rating">⭐ 4.4（5,707件）</div>
+        <div class="restaurant-meta">Carrer de Montcada 2 ｜ €€ €15〜30</div>
+        <div class="restaurant-note">ゴシック地区。きのこワサビソース・ローストビーフ名物。自然派ワイン充実。日曜定休</div>
+        <div class="restaurant-tags">
+          <span class="restaurant-tag reservation">要予約 +34 932 683 003</span>
+        </div>
+      </div>
+    </div>
+    <a class="map-btn" href="https://maps.apple.com/?q=Bar+del+Pla+Barcelona" target="_blank">
+      <span class="map-icon">🗺️</span>
+      <div class="map-info"><div class="map-name">Bar del Pla</div><div class="map-addr">地図を開く</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="sub-header"><h3>📍 バルセロナ 観光スポット</h3></div>
+  <div class="map-grid">
+    <a class="map-btn" href="https://maps.apple.com/?q=Sagrada+Familia+Barcelona" target="_blank">
+      <span class="map-icon">⛪</span>
+      <div class="map-info"><div class="map-name">サグラダ・ファミリア</div><div class="map-addr">予約済 9:15 ｜ ⭐4.8</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=Park+Guell+Barcelona" target="_blank">
+      <span class="map-icon">🌿</span>
+      <div class="map-info"><div class="map-name">グエル公園</div><div class="map-addr">予約済 15:30 ｜ ⭐4.4</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=El+Corte+Ingles+Plaza+de+Catalunya" target="_blank">
+      <span class="map-icon">🛍️</span>
+      <div class="map-info"><div class="map-name">El Corte Inglés</div><div class="map-addr">プラサ・デ・カタルーニャ ｜ TAX FREE対応</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=Hotel+Barcelona+Center" target="_blank">
+      <span class="map-icon">🏨</span>
+      <div class="map-info"><div class="map-name">Hotel Barcelona Center</div><div class="map-addr">Carrer de Balmes 103（ご宿泊先）</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== CRUISE ===== -->
+<div class="section" id="cruise">
+  <div class="section-header">
+    <span class="emoji">🚢</span>
+    <h2>地中海クルーズ（4/30〜5/8）</h2>
+  </div>
+
+  <div style="padding: 12px 16px;">
+    <div class="cruise-card">
+      <h3>🚢 Costa Fortuna 予約情報</h3>
+      <div class="cruise-info-row"><span class="key">予約番号</span><span class="val">34749189</span></div>
+      <div class="cruise-info-row"><span class="key">キャビン</span><span class="val">7346号室（バルコニー付き B2）</span></div>
+      <div class="cruise-info-row"><span class="key">レストラン</span><span class="val">ミケランジェロ1965（デッキ3）</span></div>
+      <div class="cruise-info-row"><span class="key">ディナー時間</span><span class="val">18:30（±30分）アーリータイム</span></div>
+      <div class="cruise-info-row"><span class="key">乗船</span><span class="val">4月30日 バルセロナ港</span></div>
+      <div class="cruise-info-row"><span class="key">下船</span><span class="val">5月8日 ピレウス（アテネ）07:00</span></div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>✅ 予約済みパッケージ</h3></div>
+  <ul class="bullet-list">
+    <li>🍹 <strong>MyDrinksパッケージ</strong>（2名）：カクテル・ビール・ワイン・ソフトドリンク含む</li>
+    <li>🌐 <strong>インターネット（2デバイス）</strong>：スマホ2台まで船内Wi-Fi使用可</li>
+    <li>💧 <strong>ミネラルウォーターパッケージ</strong>：毎日お部屋に届きます</li>
+    <li>💰 <strong>船内クレジット 10,000ポイント</strong>：5月8日 11:00に付与。スパ・追加ツアーに使用可</li>
+  </ul>
+
+  <div class="sub-header"><h3>⭐ 予約済みツアー</h3></div>
+  <div style="padding: 8px 16px; display:flex; flex-direction:column; gap:8px;">
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🇫🇷 マルセイユ</div>
+        <div class="port-date">5月1日（金）</div>
+      </div>
+      <div class="port-card-body">
+        <span class="tour-badge">★ 予約済みツアー</span>
+        <p><strong>プチトランで名所・街の魂をめぐる</strong></p>
+        <p>08:00〜12:00（2名）</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🎰 サヴォーナ → モナコ</div>
+        <div class="port-date">5月2日（土）</div>
+      </div>
+      <div class="port-card-body">
+        <span class="tour-badge">★ 予約済みツアー</span>
+        <p><strong>モンテカルロ：ラグジュアリー・歴史・スピード</strong></p>
+        <p>08:00〜15:00（2名）｜F1モナコGPコースを歩ける！</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🏛️ チビタベッキア → ローマ</div>
+        <div class="port-date">5月3日（日）</div>
+      </div>
+      <div class="port-card-body">
+        <span class="tour-badge">★ 予約済みツアー</span>
+        <p><strong>ローマ全景パノラマバスツアー＆フリータイム</strong></p>
+        <p>08:00〜15:00（2名）</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PORTS ===== -->
+<div class="section" id="ports">
+  <div class="section-header">
+    <span class="emoji">⚓</span>
+    <h2>寄港地ガイド</h2>
+  </div>
+
+  <div style="padding: 8px 16px; display:flex; flex-direction:column; gap:8px;">
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🇫🇷 マルセイユ</div>
+        <div class="port-date">5月1日（金）</div>
+      </div>
+      <div class="port-card-body">
+        <p>旧港（Vieux-Port）：フランス最大の漁港。プチトランでスムーズに観光</p>
+        <p>ノートルダム・ド・ラ・ガルド聖堂：丘の上から港の絶景</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🎰 モナコ（サヴォーナ寄港）</div>
+        <div class="port-date">5月2日（土）</div>
+      </div>
+      <div class="port-card-body">
+        <p>モンテカルロ：カジノ広場・王宮広場・港のヨット群</p>
+        <p>F1モナコGPのコースを実際に歩ける！（毎年5月開催）</p>
+        <p>⚠️ 14:00出航のため13:00には港へ</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🏛️ ローマ（チビタベッキア寄港）</div>
+        <div class="port-date">5月3日（日）</div>
+      </div>
+      <div class="port-card-body">
+        <p>コロッセオ・フォロ・ロマーノ・トレヴィの泉・スペイン広場</p>
+        <p>バスツアー後はフリータイム。ジェラート必食！</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🇮🇹 メッシーナ（シチリア島）</div>
+        <div class="port-date">5月4日（月）</div>
+      </div>
+      <div class="port-card-body">
+        <p>ドゥオーモ（大聖堂）：時計台の仕掛けは正午と正午すぎに動く！</p>
+        <p>グラニータ（シチリア名物かき氷）は絶対に食べて</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🇲🇹 ヴァレッタ（マルタ）</div>
+        <div class="port-date">5月5日（火）</div>
+      </div>
+      <div class="port-card-body">
+        <p>世界遺産の首都。聖ヨハネ大聖堂・アッパーバラッカガーデン</p>
+        <p>街全体が博物館のような美しい城壁都市</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🌊 終日航海日</div>
+        <div class="port-date">5月6日（水）</div>
+      </div>
+      <div class="port-card-body">
+        <p>デッキでのんびり・スパ・エンターテイメントを満喫</p>
+        <p>船内クレジット（10,000pt）の使い時です！</p>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-card-header">
+        <div class="port-name">🇬🇷 ヘラクリオン（クレタ島）</div>
+        <div class="port-date">5月7日（木）</div>
+      </div>
+      <div class="port-card-body">
+        <p>クノッソス宮殿：ミノア文明の遺跡（バスで約20分）</p>
+        <p>ヘラクリオン考古学博物館・旧市街散策</p>
+        <p>⚠️ ギリシャ上陸税 €3/人（船内口座に自動計上）</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== ATHENS ===== -->
+<div class="section" id="athens">
+  <div class="section-header">
+    <span class="emoji">🏺</span>
+    <h2>アテネ（5/8〜10）</h2>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card full">
+      <div class="label">ホテル</div>
+      <div class="value">NLH モナスティラキ</div>
+      <div style="font-size:11px;color:var(--gray);margin-top:2px;">35 Athinas, Athens ｜ 旅程番号: 73282963700037</div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>5月8日（金）下船・アテネ到着</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">07:00<div class="jp-time">日本 14:00</div></div>
+      <div class="timeline-body"><div class="timeline-title">ピレウス港着（クルーズ下船）</div><div class="timeline-note">上陸税 €3/人（船内口座より自動精算済み）</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">11:00<div class="jp-time">日本 18:00</div></div>
+      <div class="timeline-body"><div class="timeline-title">💰 船内クレジット 10,000pt 付与</div><div class="timeline-note">スパ・ショッピング等に使用可（下船前に使い切る）</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">午後<div class="jp-time"></div></div>
+      <div class="timeline-body"><div class="timeline-title">ホテルチェックイン</div><div class="timeline-note">NLH モナスティラキ</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">夕方<div class="jp-time"></div></div>
+      <div class="timeline-body"><div class="timeline-title">🍽️ ディナー</div><div class="timeline-note">Tzitzikas & Mermigas（地元人気店）⭐4.4</div></div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>5月9日（土）アテネ観光　日没 20:17</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">午前</div>
+      <div class="timeline-body"><div class="timeline-title">⭐ アクロポリス・パルテノン神殿</div><div class="timeline-note">朝8〜9時が空いていておすすめ。熱中症注意（帽子・水必携）</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">正午頃</div>
+      <div class="timeline-body"><div class="timeline-title">プラカ地区散策・ランチ</div><div class="timeline-note">タベルナでギリシャ料理。ムサカ・タラモサラタなど</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">午後</div>
+      <div class="timeline-body"><div class="timeline-title">🛍️ モナスティラキ市場</div><div class="timeline-note">陶器・スパイス・シルバーアクセサリー。値段交渉あり</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">夕方</div>
+      <div class="timeline-body"><div class="timeline-title">🌅 リカヴィトスの丘</div><div class="timeline-note">アテネ随一の夕暮れ絶景。20時台まで明るい！</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:00頃</div>
+      <div class="timeline-body"><div class="timeline-title">🍽️ ディナー</div><div class="timeline-note">Strofi（アクロポリス眺望テラス）⭐4.4 ｜ 要予約 +30 210 921 4130</div></div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>5月10日（日）帰国日　日没 20:18</h3></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">〜11:00</div>
+      <div class="timeline-body"><div class="timeline-title">ホテルチェックアウト</div><div class="timeline-note">荷物は最終日まで預かってもらえる場合も</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">午前</div>
+      <div class="timeline-body"><div class="timeline-title">🛍️ お土産・ショッピング</div><div class="timeline-note">AB Vassilopoulos（スーパー）でオリーブオイル・ハチミツ・フェタチーズ</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00頃<div class="jp-time">日本 21:00</div></div>
+      <div class="timeline-body"><div class="timeline-title">空港へ（タクシー推奨）</div><div class="timeline-note">約35〜40分 €40〜50</div></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">19:35<div class="jp-time">日本 翌2:35</div></div>
+      <div class="timeline-body"><div class="timeline-title">アテネ空港出発</div><div class="timeline-note">QR208 → ドーハ経由（飛行時間 4時間20分）</div></div>
+    </div>
+  </div>
+
+  <div style="padding: 8px 16px; display:flex; flex-direction:column; gap:6px;">
+    <div class="flight-card">
+      <div class="flight-card-header">
+        <span>QR4850 JAL運航・QR販売</span>
+        <span>5月11日（月）</span>
+      </div>
+      <div class="flight-route">
+        <div class="flight-city">
+          <div class="city-code">DOH</div>
+          <div class="city-name">ドーハ</div>
+          <div class="time">07:30</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="duration">10h 25m</div>
+          ✈
+        </div>
+        <div class="flight-city">
+          <div class="city-code">HND</div>
+          <div class="city-name">羽田 T3</div>
+          <div class="time">23:55</div>
+        </div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag seat">康司様：46C</span>
+        <span class="flight-tag seat">路子様：46A</span>
+        <span class="flight-tag">手荷物 30kg/人</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🍽️ アテネ おすすめレストラン</h3></div>
+  <div class="map-grid">
+    <div class="restaurant-card">
+      <div class="restaurant-emoji">🌿</div>
+      <div class="restaurant-info">
+        <div class="restaurant-name">Strofi</div>
+        <div class="restaurant-rating">⭐ 4.4（2,392件）</div>
+        <div class="restaurant-meta">Rovertou Galli 25（アクロポリス直下）｜ €€€ €35〜50</div>
+        <div class="restaurant-note">アクロポリス目の前のテラス席。夜はライトアップが幻想的。ラム・鯛・海老料理。月曜定休</div>
+        <div class="restaurant-tags"><span class="restaurant-tag reservation">要予約 +30 210 921 4130</span></div>
+      </div>
+    </div>
+    <a class="map-btn" href="https://maps.apple.com/?q=Strofi+Athens" target="_blank">
+      <span class="map-icon">🗺️</span>
+      <div class="map-info"><div class="map-name">Strofi</div><div class="map-addr">地図を開く</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+
+    <div class="restaurant-card">
+      <div class="restaurant-emoji">🫒</div>
+      <div class="restaurant-info">
+        <div class="restaurant-name">Tzitzikas & Mermigas</div>
+        <div class="restaurant-rating">⭐ 4.4（7,276件）</div>
+        <div class="restaurant-meta">Mitropoleos 12-14（シンタグマ広場そば）｜ €€ €25〜35</div>
+        <div class="restaurant-note">地元市民に大人気。スモークナスサラダ・ズッキーニボール・チキンのマスティックソース</div>
+        <div class="restaurant-tags"><span class="restaurant-tag reservation">要予約 +30 210 324 7607</span></div>
+      </div>
+    </div>
+    <a class="map-btn" href="https://maps.apple.com/?q=Tzitzikas+Mermigas+Athens" target="_blank">
+      <span class="map-icon">🗺️</span>
+      <div class="map-info"><div class="map-name">Tzitzikas & Mermigas</div><div class="map-addr">地図を開く</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="sub-header"><h3>📍 アテネ 観光スポット</h3></div>
+  <div class="map-grid">
+    <a class="map-btn" href="https://maps.apple.com/?q=Acropolis+Athens" target="_blank">
+      <span class="map-icon">🏛️</span>
+      <div class="map-info"><div class="map-name">アクロポリス</div><div class="map-addr">パルテノン神殿 ｜ ⭐4.8</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=Monastiraki+Square+Athens" target="_blank">
+      <span class="map-icon">🛍️</span>
+      <div class="map-info"><div class="map-name">モナスティラキ広場・市場</div><div class="map-addr">ホテル徒歩圏</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=Attica+Department+Store+Athens" target="_blank">
+      <span class="map-icon">🏬</span>
+      <div class="map-info"><div class="map-name">Attica百貨店</div><div class="map-addr">アテネ最大百貨店 ｜ TAX FREE対応</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+    <a class="map-btn" href="https://maps.apple.com/?q=NLH+Monastiraki+Athens" target="_blank">
+      <span class="map-icon">🏨</span>
+      <div class="map-info"><div class="map-name">NLH モナスティラキ</div><div class="map-addr">35 Athinas, Athens（ご宿泊先）</div></div>
+      <span class="map-arrow">›</span>
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== CRUISE GUIDE ===== -->
+<div class="section" id="guide">
+  <div class="section-header">
+    <span class="emoji">📱</span>
+    <h2>船内ガイド</h2>
+  </div>
+
+  <div class="sub-header"><h3>🌐 船内Wi-Fi プラン</h3></div>
+  <div style="padding: 0 16px;">
+    <table class="wifi-table">
+      <tr><th>プラン</th><th>料金/日</th><th>使える機能</th></tr>
+      <tr>
+        <td>WhatsApp</td>
+        <td class="price">$6/€5</td>
+        <td>WhatsAppのみ</td>
+      </tr>
+      <tr>
+        <td>ソーシャル</td>
+        <td class="price">$15/€9</td>
+        <td>SNS各種<br><span style="color:var(--accent);font-weight:700;">⚠️ LINEは非対応</span></td>
+      </tr>
+      <tr>
+        <td><strong class="recommended">フルプラン ★推奨</strong></td>
+        <td class="price recommended">$20/€15</td>
+        <td>全機能 + <strong style="color:var(--green);">LINE通話OK</strong></td>
+      </tr>
+    </table>
+    <div class="alert alert-red" style="margin: 8px 0;">
+      <strong>⚠️ LINEは「ソーシャルプラン」では使えません！</strong>
+      娘様とLINE通話・ビデオ通話をご利用の場合は「フルプラン（$20/日）」が必要です。
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🍽️ スペシャリティレストラン（有料）</h3></div>
+  <div style="padding: 0 16px;">
+    <table class="info-table">
+      <tr><th>レストラン</th><th>料金</th></tr>
+      <tr><td>🌟 ARCHIPELAGO（ミシュラン17つ星）</td><td class="highlight">€59/人</td></tr>
+      <tr><td>🥩 TEPPANYAKI（鉄板焼き）</td><td>有料</td></tr>
+      <tr><td>🍣 SUSHINO（寿司ビストロ）</td><td>有料</td></tr>
+      <tr><td>🍕 PIZZERIA PUMMID'ORO</td><td>有料</td></tr>
+      <tr><td>🥗 GREEN Healthy Food（ビーガン）</td><td>有料</td></tr>
+    </table>
+    <div class="alert alert-gold" style="margin: 8px 0;">
+      💡 船内クレジット10,000ptはスペシャリティレストランに使えます！アテネ着5/8 11:00に付与。
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🏁 下船手続きの流れ（5月8日）</h3></div>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">前</div>
+      <div class="step-body">
+        <div class="step-title">下船説明会に出席</div>
+        <div class="step-note">時間は船内新聞「Oggi a bordo」で確認</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">前</div>
+      <div class="step-body">
+        <div class="step-title">荷物タグを受け取り、廊下に出す</div>
+        <div class="step-note">翌朝1時までに廊下へ。パスポート・貴重品・翌日の服・薬は必ず手荷物に！</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">前</div>
+      <div class="step-body">
+        <div class="step-title">最終明細書を確認</div>
+        <div class="step-note">問題あれば当日中にカスタマーサービスへ。下船後は訂正不可！</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">当</div>
+      <div class="step-body">
+        <div class="step-title">朝食 → 客室を退室</div>
+        <div class="step-note">金庫の忘れ物を確認。コスタカードは必ず携帯！</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">当</div>
+      <div class="step-body">
+        <div class="step-title">船内放送に従い下船</div>
+        <div class="step-note">荷物タグの色ごとに呼ばれます</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">後</div>
+      <div class="step-body">
+        <div class="step-title">ターミナルで荷物受取 → 税関 → 完了！</div>
+        <div class="step-note">「携帯品申告書」を記入の上、パスポート提示</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="section" id="checklist">
+  <div class="section-header">
+    <span class="emoji">✅</span>
+    <h2>持ち物・重要書類</h2>
+  </div>
+
+  <div class="sub-header"><h3>📄 重要書類チェック</h3></div>
+  <div style="padding: 0 16px;">
+    <div class="ticket-box" style="margin-bottom:8px;">
+      <div class="ticket-box-header">✈️ カタール航空チケット</div>
+      <div class="ticket-box-body">
+        <div class="ticket-row"><span class="k">予約番号（PNR）</span><span class="v">8E5LVG</span></div>
+        <div class="ticket-row"><span class="k">康司様 チケット番号</span><span class="v">157 2302490177-78</span></div>
+        <div class="ticket-row"><span class="k">路子様 チケット番号</span><span class="v">157 2302490179-80</span></div>
+        <div class="ticket-row"><span class="k">羽田便（QR4850）康司様席</span><span class="v">46C</span></div>
+        <div class="ticket-row"><span class="k">羽田便（QR4850）路子様席</span><span class="v">46A（隣！）</span></div>
+        <div class="ticket-row"><span class="k">手荷物</span><span class="v">30kg × 各自</span></div>
+      </div>
+    </div>
+    <div class="ticket-box">
+      <div class="ticket-box-header">🚢 クルーズ・その他</div>
+      <div class="ticket-box-body">
+        <div class="ticket-row"><span class="k">クルーズ予約番号</span><span class="v">34749189</span></div>
+        <div class="ticket-row"><span class="k">サグラダ・ファミリア</span><span class="v">Code: 94488645</span></div>
+        <div class="ticket-row"><span class="k">グエル公園</span><span class="v">Locator: 700809431070</span></div>
+        <div class="ticket-row"><span class="k">バルセロナ ホテル</span><span class="v">Booking: 25100353319</span></div>
+        <div class="ticket-row"><span class="k">アテネ ホテル</span><span class="v">旅程番号: 73282963700037</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🧳 持ち物チェックリスト</h3></div>
+  <ul class="bullet-list">
+    <li>パスポート（有効期限確認！）</li>
+    <li>クレジットカード（VISA/Mastercard推奨）</li>
+    <li>ユーロ現金（€300〜500程度）</li>
+    <li>海外旅行保険証書</li>
+    <li>変換プラグ（Cタイプ：スペイン・ギリシャ）</li>
+    <li>スマートフォン・充電器・モバイルバッテリー</li>
+    <li>水着・ビーチサンダル（デッキプール用）</li>
+    <li>スマートカジュアルウェア（船内夕食用）</li>
+    <li>歩きやすいスニーカー（観光用）</li>
+    <li>薄手のカーディガン（船内・夜は涼しい）</li>
+    <li>日焼け止め・帽子・サングラス</li>
+    <li>酔い止め薬（クルーズに特に重要！）</li>
+    <li>常備薬・英文処方箋（必要な場合）</li>
+    <li>シャンプー・歯ブラシ（船には備えなし）</li>
+  </ul>
+
+  <div class="sub-header"><h3>⚠️ 出発前に確認すること</h3></div>
+  <ul class="bullet-list">
+    <li>Costa Cruises ウェブチェックイン（mycosta.com）</li>
+    <li>クルーズ残金支払い確認（期限：2026年3月2日）</li>
+    <li>海外旅行保険加入</li>
+    <li>Strofi・La Pepita・Bar del Pla 予約</li>
+    <li>Costa Cruisesアプリをインストール</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<div class="footer">
+  <div class="footer-title">🌊 長野様 ヨーロッパ旅行 2026</div>
+  <div>バルセロナ・地中海クルーズ・アテネ</div>
+  <div style="margin-top:8px;">2026年4月27日（月）〜 5月11日（月）</div>
+  <div style="margin-top:12px;">素晴らしい旅を！<br>Buon viaggio! 🇮🇹</div>
+</div>
+
+<script>
+// Active nav on scroll
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
