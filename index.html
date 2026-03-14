@@ -15,7 +15,35 @@
   --light-gray: #f5f5f0;
   --accent: #e74c3c;
   --green: #27ae60;
+  --qr-maroon: #6b0f1a;
+  --af-blue: #002157;
 }
+/* === DOC LINK === */
+.doc-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #fff8e8; color: #7a5a00;
+  border: 1px solid var(--gold); font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; text-decoration: none;
+  margin-left: 6px; white-space: nowrap; vertical-align: middle;
+}
+.doc-link:hover { background: var(--gold); color: var(--navy); }
+/* === SEAT TABLE PLAN COLORS === */
+.seat-qr { background: #6b0f1a; color: white; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+.seat-af { background: #002157; color: white; font-weight: 700; padding: 4px 10px; border-radius: 6px; display: inline-block; }
+/* === PLAN HEADER === */
+.plan-head-qr { background: linear-gradient(135deg, #6b0f1a, #9a1828); color: white; padding: 8px 14px; font-weight: 700; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.plan-head-af { background: linear-gradient(135deg, #002157, #003899); color: white; padding: 8px 14px; font-weight: 700; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+/* === TRAIN CARD === */
+.train-step { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 12px; align-items: flex-start; }
+.train-step:last-child { border-bottom: none; }
+.train-time { color: var(--navy); font-weight: 700; min-width: 48px; font-size: 12px; }
+.train-body { flex: 1; }
+.train-arrow { color: var(--gold); padding: 4px 0; font-size: 11px; }
+/* === CDG SHOPPING GRID === */
+.shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.shop-item { background: white; border-radius: 8px; padding: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-size: 11px; }
+.shop-item .brand { font-weight: 700; color: var(--navy); font-size: 12px; margin-bottom: 3px; }
+.shop-item .cat { color: var(--gray); font-size: 10px; }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -599,6 +627,7 @@ body {
   <a href="#athens">アテネ</a>
   <a href="#guide">船内ガイド</a>
   <a href="#checklist">持ち物</a>
+  <a href="#docs">📁書類</a>
 </nav>
 
 <!-- ===== OVERVIEW ===== -->
@@ -745,6 +774,69 @@ body {
     <h2>出発（4月27日・28日）</h2>
   </div>
 
+  <div class="sub-header"><h3>🚃 出発当日 — 東戸塚からの電車ベストスケジュール</h3></div>
+  <div style="padding: 0 16px 8px; display:flex; flex-direction:column; gap:10px;">
+
+    <!-- QR案 成田 -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div class="plan-head-qr">
+        <span>🥇 第1案 QR — 成田空港 T2（15:25発）</span>
+        <span style="font-size:11px;opacity:0.85;">チェックイン締切 13:25</span>
+      </div>
+      <div style="padding:12px 14px;">
+        <div class="train-step">
+          <div class="train-time">11:20頃</div>
+          <div class="train-body"><strong>東戸塚駅</strong> 出発（横須賀線 上り）</div>
+        </div>
+        <div class="train-arrow" style="padding-left:14px;">↓ 横須賀線 約2分</div>
+        <div class="train-step">
+          <div class="train-time">11:22頃</div>
+          <div class="train-body"><strong>戸塚駅</strong> 乗換 → N'EX（成田エクスプレス）へ<br><span style="font-size:11px;color:#888;">※N'EX は東戸塚に停まらないため戸塚で必ず乗換</span></div>
+        </div>
+        <div class="train-arrow" style="padding-left:14px;">↓ 成田エクスプレス 約1時間30分</div>
+        <div class="train-step">
+          <div class="train-time">〜13:00</div>
+          <div class="train-body"><strong>成田空港 第2ターミナル</strong> 到着<br><span style="font-size:11px;color:#888;">チェックイン窓口まで余裕あり（締切まで約25分以上確保）</span></div>
+        </div>
+        <div style="background:#fdf8ec;border-radius:8px;padding:8px 10px;border-left:3px solid var(--gold);font-size:11px;color:#7a5800;margin-top:8px;">
+          💡 <strong>N'EX はえきねっとで35%割引</strong>（通常 ¥3,070 → 割引後 約 ¥2,000前後）。前日までに予約を。<br>
+          荷物が多い場合は宅急便で前日に空港へ送ると楽です（ヤマト・佐川）。
+        </div>
+      </div>
+    </div>
+
+    <!-- AF案 羽田 -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div class="plan-head-af">
+        <span>🥈 第2案 AF — 羽田空港 T3（08:50発）</span>
+        <span style="font-size:11px;opacity:0.85;">チェックイン締切 07:50</span>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="background:#fdf0f0;border-radius:8px;padding:8px 10px;border-left:3px solid var(--accent);font-size:11px;color:#c0392b;margin-bottom:10px;">
+          ⚠️ <strong>早朝出発のため前日入り（INNSiDE バルセロナ空港前泊）を予約済みです。</strong><br>当日朝に東戸塚から出発する場合は下記スケジュールで。
+        </div>
+        <div class="train-step">
+          <div class="train-time">06:09</div>
+          <div class="train-body"><strong>東戸塚駅</strong> 出発（横須賀線 上り）</div>
+        </div>
+        <div class="train-arrow" style="padding-left:14px;">↓ 横須賀線 約8分</div>
+        <div class="train-step">
+          <div class="train-time">06:17頃</div>
+          <div class="train-body"><strong>横浜駅</strong> 乗換 → 京急本線 エアポート急行（羽田空港方面）<br><span style="font-size:11px;color:#888;">横浜で京急ホームへ移動（約5分）。05分または10分台発を利用</span></div>
+        </div>
+        <div class="train-arrow" style="padding-left:14px;">↓ 京急 約28分</div>
+        <div class="train-step">
+          <div class="train-time">06:50頃</div>
+          <div class="train-body"><strong>羽田空港第3ターミナル</strong> 到着<br><span style="font-size:11px;color:#888;">チェックイン締切 07:50 まで1時間の余裕あり</span></div>
+        </div>
+        <div style="background:#eef4ff;border-radius:8px;padding:8px 10px;border-left:3px solid #002157;font-size:11px;color:#002157;margin-top:8px;">
+          💡 京急は Suica・PASMO でそのまま乗れます（乗換改札不要）。横浜〜羽田T3 は約 ¥370。<br>
+          余裕を持つなら <strong>06:09 より1本早い電車</strong>（05:57頃発）が安心です。
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="sub-header"><h3>往路フライト</h3></div>
 
   <div style="padding: 8px 16px; display:flex; flex-direction:column; gap:8px;">
@@ -805,48 +897,97 @@ body {
     </div>
   </div>
 
-  <div class="sub-header"><h3>🪑 フライト座席表（全4便）</h3></div>
+  <div class="sub-header"><h3>🪑 フライト座席表 — 第1案（QR）＆ 第2案（AF）</h3></div>
   <div style="padding: 0 16px 8px;">
-    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+
+    <!-- QR SEAT TABLE -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:10px;">
+      <div class="plan-head-qr">
+        <span>🥇 第1案 カタール航空（QR）座席</span>
+        <span style="font-size:11px;opacity:0.85;">PNR: 8E5LVG</span>
+      </div>
       <table style="width:100%;border-collapse:collapse;font-size:13px;">
         <thead>
-          <tr style="background:#1a2f5e;color:white;">
-            <th style="padding:10px 12px;text-align:left;font-weight:700;">便名</th>
-            <th style="padding:10px 12px;text-align:left;font-weight:700;">区間</th>
-            <th style="padding:10px 8px;text-align:center;font-weight:700;">康司様</th>
-            <th style="padding:10px 8px;text-align:center;font-weight:700;">路子様</th>
+          <tr style="background:#fdf0f2;">
+            <th style="padding:9px 12px;text-align:left;font-weight:700;color:#6b0f1a;">便名</th>
+            <th style="padding:9px 12px;text-align:left;font-weight:700;color:#6b0f1a;">区間</th>
+            <th style="padding:9px 8px;text-align:center;font-weight:700;color:#6b0f1a;">康司様</th>
+            <th style="padding:9px 8px;text-align:center;font-weight:700;color:#6b0f1a;">路子様</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 12px;"><strong>QR809</strong><br><span style="font-size:10px;color:#888;">4/27 月</span></td>
-            <td style="padding:10px 12px;">🇯🇵 成田<br>→ 🇶🇦 ドーハ</td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">33E</span></td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">33D</span></td>
+            <td style="padding:10px 12px;">🇯🇵 成田T2<br>→ 🇶🇦 ドーハ</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">33E</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">33D</span></td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;background:#fafaf7;">
             <td style="padding:10px 12px;"><strong>QR145</strong><br><span style="font-size:10px;color:#888;">4/28 火</span></td>
             <td style="padding:10px 12px;">🇶🇦 ドーハ<br>→ 🇪🇸 バルセロナ</td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">32E</span></td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">32D</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">32E</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">32D</span></td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 12px;"><strong>QR208</strong><br><span style="font-size:10px;color:#888;">5/10 日</span></td>
             <td style="padding:10px 12px;">🇬🇷 アテネ<br>→ 🇶🇦 ドーハ</td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">17B</span></td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#2c4a8a;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">17C</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">17B</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">17C</span></td>
           </tr>
-          <tr style="background:#fdf6e3;">
+          <tr style="background:#fdf0f2;">
             <td style="padding:10px 12px;"><strong>QR4850</strong><br><span style="font-size:10px;color:#888;">5/11 月</span></td>
-            <td style="padding:10px 12px;">🇶🇦 ドーハ<br>→ 🇯🇵 羽田</td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#c9a84c;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">46C</span></td>
-            <td style="padding:10px 8px;text-align:center;"><span style="background:#c9a84c;color:white;font-weight:700;padding:4px 10px;border-radius:6px;">46A</span></td>
+            <td style="padding:10px 12px;">🇶🇦 ドーハ<br>→ 🇯🇵 羽田T3</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">46C</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-qr">46A</span></td>
           </tr>
         </tbody>
       </table>
-      <div style="padding:10px 14px;font-size:11px;color:#888;border-top:1px solid #f0f0f0;">
-        💺 往路は33列・32列、復路は17列・46列。お二人は全便で隣同士です！
+      <div style="padding:8px 14px;font-size:11px;color:#888;border-top:1px solid #f0f0f0;">💺 往路は33列・32列、復路は17列・46列。全便お隣同士です。手荷物：30kg×各自</div>
+    </div>
+
+    <!-- AF SEAT TABLE -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div class="plan-head-af">
+        <span>🥈 第2案 エールフランス（AF）座席</span>
+        <span style="font-size:11px;opacity:0.85;">予約番号: YZF7JW ✅発券済</span>
       </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:#eef2fb;">
+            <th style="padding:9px 12px;text-align:left;font-weight:700;color:#002157;">便名</th>
+            <th style="padding:9px 12px;text-align:left;font-weight:700;color:#002157;">区間</th>
+            <th style="padding:9px 8px;text-align:center;font-weight:700;color:#002157;">康司様</th>
+            <th style="padding:9px 8px;text-align:center;font-weight:700;color:#002157;">路子様</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f0f0;">
+            <td style="padding:10px 12px;"><strong>AF0187</strong><br><span style="font-size:10px;color:#888;">4/27 月</span></td>
+            <td style="padding:10px 12px;">🇯🇵 羽田T3 08:50発<br>→ 🇫🇷 パリCDG 2E 16:45着</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">47B</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">47A</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f0f0;background:#f5f8ff;">
+            <td style="padding:10px 12px;"><strong>AF1448</strong><br><span style="font-size:10px;color:#888;">4/27 月</span></td>
+            <td style="padding:10px 12px;">🇫🇷 パリCDG 2F 20:55発<br>→ 🇪🇸 バルセロナ 22:45着</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">18E</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">18D</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f0f0;">
+            <td style="padding:10px 12px;"><strong>AF1833</strong><br><span style="font-size:10px;color:#888;">5/10 日</span></td>
+            <td style="padding:10px 12px;">🇬🇷 アテネ 18:35発<br>→ 🇫🇷 パリCDG 2F 21:05着</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">18E</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">18D</span></td>
+          </tr>
+          <tr style="background:#eef2fb;">
+            <td style="padding:10px 12px;"><strong>AF0274</strong><br><span style="font-size:10px;color:#888;">5/10 日 深夜</span></td>
+            <td style="padding:10px 12px;">🇫🇷 パリCDG 2E 23:00発<br>→ 🇯🇵 羽田T3 翌19:40着</td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">55K</span></td>
+            <td style="padding:10px 8px;text-align:center;"><span class="seat-af">55L</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="padding:8px 14px;font-size:11px;color:#888;border-top:1px solid #f0f0f0;">💺 往路・復路ともにお隣同士。手荷物：23kg×2個/各自 ｜ 康司様チケット: 057-235-235-694-4　路子様: 057-235-235-694-6</div>
     </div>
   </div>
 
@@ -855,7 +996,116 @@ body {
     21:55着 → 翌07:05発。Al Maha Lounge（プライオリティパス利用可）でシャワー・食事・仮眠を。24時間営業。
   </div>
 
-  <div class="sub-header"><h3>🛋️ ラウンジ活用（プライオリティパス）</h3></div>
+  <div class="sub-header"><h3>🗼 パリCDG トランジット（第2案 AF のみ）— 約4時間10分</h3></div>
+  <div style="padding: 0 16px 8px;">
+
+    <!-- CDG Lounge -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:10px;">
+      <div class="plan-head-af">
+        <span>🛋️ CDGラウンジ（プライオリティパス）</span>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:#eef4ff;border-radius:8px;padding:10px 12px;border-left:3px solid #002157;">
+            <div style="font-weight:700;font-size:13px;color:#002157;margin-bottom:4px;">YotelAir CDG — ターミナル2E（Lゲート上階）</div>
+            <div style="font-size:12px;color:#333;line-height:1.6;">プライオリティパスで利用可。シャワー・食事・ドリンク・Wi-Fi完備。ただし<strong>セキュリティ外の手前エリア</strong>に位置するため、2Eから2Fへ乗継の際はセキュリティを出る必要があります。<br>
+            → <span style="color:#c0392b;font-weight:700;">往路トランジット（4時間10分）ではラウンジより免税ショッピングが現実的</span>。復路（5/10 パリ通過 約2時間）は時間短く利用困難。</div>
+          </div>
+          <div style="background:#fdf8ec;border-radius:8px;padding:8px 10px;border-left:3px solid var(--gold);font-size:11px;color:#7a5800;">
+            ✅ <strong>AF便ビジネスラウンジ（ルイ・ヴィトン スイート）</strong>はエコノミー搭乗では利用不可。プライオリティパスラウンジとしてはYotelAirが唯一です。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CDG Shopping -->
+    <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <div style="background:linear-gradient(135deg,#c9a84c,#b08a30);color:white;padding:10px 14px;font-weight:700;font-size:13px;">
+        🛍️ CDG 2F 免税ショッピング — 女性向けガイド（約3時間楽しめます）
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:11px;color:#888;margin-bottom:10px;">ターミナル2F（BCN行きゲートエリア）はパリの有名ブランドが集結。免税なのでフランス国内より安い場合も。</div>
+
+        <div style="font-size:11px;font-weight:700;color:#1a2f5e;letter-spacing:1px;margin-bottom:6px;">👜 ラグジュアリーブランド</div>
+        <div class="shop-grid" style="margin-bottom:12px;">
+          <div class="shop-item">
+            <div class="brand">Longchamp</div>
+            <div class="cat">バッグ・革小物</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">パリ発祥。ル・プリアージュが人気。空港限定色あり</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Hermès</div>
+            <div class="cat">スカーフ・香水</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">スカーフ・ツイリーは手頃な記念品に</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Dior / Chanel</div>
+            <div class="cat">コスメ・香水</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">限定品・トラベルセットが充実。免税で10〜15%引き</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Moncler / Sandro</div>
+            <div class="cat">ウェア・小物</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">フレンチカジュアル。旅行後半のお土産に</div>
+          </div>
+        </div>
+
+        <div style="font-size:11px;font-weight:700;color:#1a2f5e;letter-spacing:1px;margin-bottom:6px;">🍫 スイーツ・食品（持ち帰り土産に最適）</div>
+        <div class="shop-grid" style="margin-bottom:12px;">
+          <div class="shop-item">
+            <div class="brand">Ladurée</div>
+            <div class="cat">マカロン</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">パリの老舗。ギフトボックスが美しい。日本への定番土産</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">La Maison du Chocolat</div>
+            <div class="cat">チョコレート</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">パリ発の高級チョコ。箱が上品でギフトに最適</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Mariage Frères</div>
+            <div class="cat">紅茶・缶</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">フランス最高峰の紅茶。デザインが美しく女性に大人気</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Fauchon</div>
+            <div class="cat">食品・ジャム</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">パリ高級食料品店。ジャム・フォアグラ・プレザーブ</div>
+          </div>
+        </div>
+
+        <div style="font-size:11px;font-weight:700;color:#1a2f5e;letter-spacing:1px;margin-bottom:6px;">💄 フレンチコスメ（空港価格でお得）</div>
+        <div class="shop-grid">
+          <div class="shop-item">
+            <div class="brand">L'Occitane</div>
+            <div class="cat">ハンドクリーム・石鹸</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">プロヴァンス産。ハンドクリームセットがばらまき土産に</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Nuxe / Caudalie</div>
+            <div class="cat">スキンケア</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">フランス薬局コスメ。日本未発売品も。Dry Oilが人気</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Clarins / Sisley</div>
+            <div class="cat">高級スキンケア</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">パリ発の老舗ブランド。免税で日本の定価より安い</div>
+          </div>
+          <div class="shop-item">
+            <div class="brand">Guerlain</div>
+            <div class="cat">香水・コスメ</div>
+            <div style="font-size:10px;color:#555;margin-top:3px;">「モン・ゲラン」など限定フレグランスが揃う</div>
+          </div>
+        </div>
+
+        <div style="background:#fdf8ec;border-radius:8px;padding:8px 10px;border-left:3px solid var(--gold);font-size:11px;color:#7a5800;margin-top:10px;">
+          💡 <strong>免税（DUTY FREE）でのお得なポイント</strong>：EU出国後のエリアでの購入は消費税が免除。特にラグジュアリーブランドは日本定価より10〜20%安くなる場合があります。パスポート提示が必要です。搭乗ゲートは20:15確認開始（BCN行き AF1448）。ショッピングは18:30頃までに済ませると安心。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-header"><h3>🛋️ ラウンジ活用（プライオリティパス）成田・ドーハ</h3></div>
   <div style="padding: 0 16px;">
     <table class="info-table">
       <tr><th>場所</th><th>ラウンジ</th><th>利用可否</th></tr>
@@ -910,7 +1160,13 @@ body {
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-time">09:15<div class="jp-time">日本 16:15</div></div>
-      <div class="timeline-body"><div class="timeline-title">⭐ サグラダ・ファミリア入場</div><div class="timeline-note">チケット予約済（Code: 94488645）。地下鉄L2/L5 Sagrada Família駅</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">⭐ サグラダ・ファミリア入場</div>
+        <div class="timeline-note">チケット予約済（Code: <strong>94488645</strong>）。地下鉄L2/L5 Sagrada Família駅</div>
+        <div style="margin-top:5px;">
+          <a href="files/sagrada_familia.pdf" target="_blank" class="doc-link">🎫 入場チケット（PDF）</a>
+        </div>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-time">12:30頃<div class="jp-time">日本 19:30</div></div>
@@ -918,7 +1174,13 @@ body {
     </div>
     <div class="timeline-item">
       <div class="timeline-time">15:30<div class="jp-time">日本 22:30</div></div>
-      <div class="timeline-body"><div class="timeline-title">⭐ グエル公園入場</div><div class="timeline-note">チケット予約済（Locator: 700809431070）。⚠️ 30分以内に入場。バス24番orL3 Lesseps駅徒歩15分</div></div>
+      <div class="timeline-body">
+        <div class="timeline-title">⭐ グエル公園入場</div>
+        <div class="timeline-note">チケット予約済（Locator: <strong>700809431070</strong>）。⚠️ 30分以内に入場。バス24番orL3 Lesseps駅徒歩15分</div>
+        <div style="margin-top:5px;">
+          <a href="files/guell_park.pdf" target="_blank" class="doc-link">🎫 入場チケット（PDF）</a>
+        </div>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="timeline-time">18:30頃<div class="jp-time">日本 翌1:30</div></div>
@@ -2162,10 +2424,6 @@ body {
       </div>
     </div>
 
-    <div style="background:#fdf8ec;border-radius:8px;padding:10px 12px;border-left:3px solid #c9a84c;font-size:11px;color:#7a5800;">
-      ⚠️ <strong>アーキペラゴ（ARCHIPELAGO）</strong>については、MyCosta上でCosta Fortuna搭載の有無をご確認ください。搭載されている場合はミシュラン合計16つ星の3シェフ監修コースが楽しめます（€59/人）。
-    </div>
-
     <a href="https://mycosta.costacruises.com/login-page.html" target="_blank" class="map-btn" style="margin-top:4px;">
       <span class="map-icon">🚢</span>
       <div class="map-info">
@@ -2375,13 +2633,149 @@ body {
     <li>シャンプー・歯ブラシ（船には備えなし）</li>
   </ul>
 
-  <div class="sub-header"><h3>⚠️ 出発前に確認すること</h3></div>
+  <div class="sub-header"><h3>⚠️ 出発前に残っている確認事項</h3></div>
   <ul class="bullet-list">
-    <li>Costa Cruises ウェブチェックイン（mycosta.com）</li>
-    <li>海外旅行保険加入</li>
-    <li>Strofi・La Pepita・Bar del Pla 予約</li>
-    <li>Costa Cruisesアプリをインストール</li>
+    <li>Costa Cruises <strong>ウェブチェックイン</strong>（<a href="https://mycosta.costacruises.com" target="_blank" style="color:var(--navy);">mycosta.com</a>）— 出発前に完了させてください</li>
+    <li>Strofi・La Pepita・Bar del Pla <strong>レストラン予約</strong>（電話番号は連絡先セクション参照）</li>
+    <li>Costa Cruisesアプリをインストール（船内新聞・スケジュール確認に便利）</li>
+    <li>N'EX（成田エクスプレス）予約 ← 第1案QR確定時。えきねっとで35%割引</li>
   </ul>
+  <div class="alert alert-gold px16" style="margin-top:8px;">
+    ✅ 完了済み：海外旅行保険（TH02056789）・AFチケット（YZF7JW）・INNSiDEホテル・クルーズ代金・サグラダ・グエル公園・ツアー3本・各種パッケージ
+  </div>
+</div>
+
+<!-- ===== DOCS ===== -->
+<div class="section" id="docs">
+  <div class="section-header">
+    <span class="emoji">📁</span>
+    <h2>予約エビデンス書類</h2>
+  </div>
+  <div style="padding:10px 16px;">
+    <div class="alert alert-blue" style="margin:0 0 12px;">
+      <strong>📂 開き方</strong>：このファイル（index.html）と同じ場所にある <code style="background:#eee;padding:1px 5px;border-radius:3px;">files/</code> フォルダに全PDFが入っています。タップすると直接開けます。
+    </div>
+
+    <!-- フライト -->
+    <div class="sub-header" style="margin:0 0 8px;"><h3>✈️ フライト</h3></div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+      <a href="files/QR_予約_8E5LVG.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🎫</span>
+        <div class="map-info"><div class="map-name">QR 旅程・予約書</div><div class="map-addr">カタール航空 PNR: 8E5LVG</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/QR_領収書_康司.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🧾</span>
+        <div class="map-info"><div class="map-name">QR 領収書（康司様）</div><div class="map-addr">チケット: 157-2302490177/78</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/QR_領収書_路子.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🧾</span>
+        <div class="map-info"><div class="map-name">QR 領収書（路子様）</div><div class="map-addr">チケット: 157-2302490179/80</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/AF_Eチケット_康司.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🎫</span>
+        <div class="map-info"><div class="map-name">AF Eチケット（康司様）</div><div class="map-addr">057-235-235-694-4 ／ YZF7JW</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/AF_Eチケット_路子.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🎫</span>
+        <div class="map-info"><div class="map-name">AF Eチケット（路子様）</div><div class="map-addr">057-235-235-694-6 ／ YZF7JW</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+    </div>
+
+    <!-- ホテル -->
+    <div class="sub-header" style="margin:0 0 8px;"><h3>🏨 ホテル</h3></div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+      <a href="files/ホテル_INNSiDE_バルセロナ空港.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🏨</span>
+        <div class="map-info"><div class="map-name">INNSiDE Meliá（前泊）</div><div class="map-addr">予約番号: 5954720943 ／ 4/27</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/ホテル_バルセロナセンター_予約確認.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🏨</span>
+        <div class="map-info"><div class="map-name">Hotel Barcelona Center</div><div class="map-addr">Booking: 25100353319 ／ 4/28〜30</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/ホテル_アテネ_NLH.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🏛️</span>
+        <div class="map-info"><div class="map-name">NLH モナスティラキ（アテネ）</div><div class="map-addr">旅程番号: 73282963700037 ／ 5/8〜10</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+    </div>
+
+    <!-- クルーズ -->
+    <div class="sub-header" style="margin:0 0 8px;"><h3>🚢 クルーズ</h3></div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+      <a href="files/クルーズ_予約詳細.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">📋</span>
+        <div class="map-info"><div class="map-name">クルーズ 予約詳細</div><div class="map-addr">予約番号: 34750988</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/クルーズ_請求書.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🧾</span>
+        <div class="map-info"><div class="map-name">クルーズ 請求書</div><div class="map-addr">¥455,590 支払済</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/クルーズ_行程表.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🗺️</span>
+        <div class="map-info"><div class="map-name">クルーズ 行程表</div><div class="map-addr">MyCosta 旅程</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/クルーズ_ディナー予約.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🍽️</span>
+        <div class="map-info"><div class="map-name">ディナー予約確認</div><div class="map-addr">18:30 ミケランジェロ1965（デッキ3）</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/コスタ_クルーズガイド2026.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">📖</span>
+        <div class="map-info"><div class="map-name">Costa クルーズガイド 2026</div><div class="map-addr">船内施設・レストラン案内</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+    </div>
+
+    <!-- ツアー -->
+    <div class="sub-header" style="margin:0 0 8px;"><h3>🎫 オプショナルツアー</h3></div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;">
+      <a href="files/ツアー_マルセイユ_プチトラン.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🇫🇷</span>
+        <div class="map-info"><div class="map-name">マルセイユ プチトラン</div><div class="map-addr">5/1（金）08:00〜12:00</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/ツアー_モナコ_モンテカルロ.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🇲🇨</span>
+        <div class="map-info"><div class="map-name">モナコ モンテカルロ</div><div class="map-addr">5/2（土）08:00〜15:00</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/ツアー_ローマ_パノラマ.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">🇮🇹</span>
+        <div class="map-info"><div class="map-name">ローマ パノラマバス</div><div class="map-addr">5/3（日）08:00〜15:00</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+    </div>
+
+    <!-- 保険 -->
+    <div class="sub-header" style="margin:0 0 8px;"><h3>🛡️ 海外旅行保険</h3></div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <a href="files/保険_証明書一式_TH02056789.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">📜</span>
+        <div class="map-info"><div class="map-name">保険証明書 一式（2名）</div><div class="map-addr">証券番号: TH02056789 ／ 治療費無制限</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/保険_付帯内容.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">📄</span>
+        <div class="map-info"><div class="map-name">保険 付帯内容</div><div class="map-addr">補償詳細</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+      <a href="files/保険_契約内容.pdf" target="_blank" class="map-btn">
+        <span class="map-icon">📄</span>
+        <div class="map-info"><div class="map-name">保険 契約内容</div><div class="map-addr">約款・規定</div></div>
+        <span class="map-arrow">›</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <div class="divider"></div>
