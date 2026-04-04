@@ -55,22 +55,28 @@ a:hover { text-decoration: underline; }
   font-size: 1.05rem; font-weight: 600; letter-spacing: .05em;
 }
 
-/* NAV */
-nav {
+/* TAB NAV */
+#tab-nav {
   position: sticky; top: 0; z-index: 100;
   background: var(--primary-dark);
   display: flex; overflow-x: auto; gap: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
   scrollbar-width: none;
 }
-nav::-webkit-scrollbar { display: none; }
-nav a {
+#tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: none; border: none; cursor: pointer;
   color: rgba(255,255,255,.8); padding: 13px 15px;
-  font-size: 13px; white-space: nowrap;
+  font-size: 13px; white-space: nowrap; font-family: inherit;
   border-bottom: 3px solid transparent;
   transition: all .2s; flex-shrink: 0;
 }
-nav a:hover { color: #fff; border-bottom-color: var(--accent); background: rgba(255,255,255,.07); text-decoration: none; }
+.tab-btn:hover { color: #fff; border-bottom-color: var(--accent); background: rgba(255,255,255,.07); }
+.tab-btn.active { color: #fff; border-bottom-color: var(--accent); background: rgba(255,255,255,.1); }
+
+/* TAB PANELS */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
 /* CONTAINER */
 .container { max-width: 880px; margin: 0 auto; padding: 28px 16px; }
@@ -341,24 +347,21 @@ footer .sub { font-size: .9rem; opacity: .7; }
   </div>
 </div>
 
-<!-- ==================== NAV ==================== -->
-<nav>
-  <a href="#overview">📋 概要</a>
-  <a href="#departure">✈️ 出発</a>
-  <a href="#barcelona">🏛️ バルセロナ</a>
-  <a href="#cruise">🚢 クルーズ</a>
-  <a href="#ports">⚓ 寄港地</a>
-  <a href="#athens">🏺 アテネ</a>
-  <a href="#guide">📱 船内ガイド</a>
-  <a href="#checklist">🧳 持ち物</a>
-  <a href="#greetings">💬 現地語</a>
-  <a href="#transport">🚇 交通</a>
-  <a href="#docs">📁 書類</a>
+<!-- ==================== TAB NAV ==================== -->
+<nav id="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview')">📋 概要</button>
+  <button class="tab-btn" onclick="showTab('departure')">✈️ 出発</button>
+  <button class="tab-btn" onclick="showTab('barcelona')">🏛️ バルセロナ</button>
+  <button class="tab-btn" onclick="showTab('cruise')">🚢 クルーズ</button>
+  <button class="tab-btn" onclick="showTab('athens')">🏺 アテネ</button>
+  <button class="tab-btn" onclick="showTab('guide')">📱 船内ガイド</button>
+  <button class="tab-btn" onclick="showTab('checklist')">🧳 持ち物</button>
 </nav>
 
 <div class="container">
 
 <!-- ==================== OVERVIEW ==================== -->
+<div class="tab-panel active" id="tab-overview">
 <section id="overview">
   <div class="section-header">
     <span class="section-icon">📋</span>
@@ -468,8 +471,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     </div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== DEPARTURE ==================== -->
+<div class="tab-panel" id="tab-departure">
 <section id="departure">
   <div class="section-header">
     <span class="section-icon">✈️</span>
@@ -585,8 +590,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     <div class="info orange" style="margin-top:10px">⚠️ 2025年4月以降、ダイナースクラブのPPは国内レストラン・リフレッシュ施設は利用不可。ラウンジのみ可。</div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== BARCELONA ==================== -->
+<div class="tab-panel" id="tab-barcelona">
 <section id="barcelona">
   <div class="section-header">
     <span class="section-icon">🏛️</span>
@@ -669,8 +676,9 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="rest-name">La Pepita</div>
         <div class="rest-rating">⭐ 4.5（7,403件）</div>
         <div class="rest-addr">Carrer de Còrsega 343 ｜ €€ €15〜25</div>
-        <div class="rest-desc">グラシア地区。ビーフカルパッチョ・フォアグラ入りタパス。グエル公園帰りに最適</div>
-        <div class="rest-note">要予約 +34 932 384 893</div>
+        <div class="rest-desc">グラシア地区。創作タパス。グエル公園帰りに立ち寄りやすい</div>
+        <div class="rest-note">⚠️ 観光客が多く騒がしい傾向あり。落ち着いた食事はBar del Plaを推奨</div>
+        <div class="rest-note">📞 +34 932 384 893（要予約）</div>
         <div class="btn-row"><a class="btn btn-outline" href="https://maps.apple.com/?ll=41.3980,2.1610&q=La+Pepita+Barcelona" target="_blank">🗺️ 地図</a></div>
       </div>
       <div class="rest-card">
@@ -685,8 +693,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     </div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== CRUISE ==================== -->
+<div class="tab-panel" id="tab-cruise">
 <section id="cruise">
   <div class="section-header">
     <span class="section-icon">🚢</span>
@@ -799,6 +809,7 @@ footer .sub { font-size: .9rem; opacity: .7; }
   </div>
 </section>
 
+
 <!-- ==================== PORTS ==================== -->
 <section id="ports">
   <div class="section-header">
@@ -876,8 +887,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     </div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== ATHENS ==================== -->
+<div class="tab-panel" id="tab-athens">
 <section id="athens">
   <div class="section-header">
     <span class="section-icon">🏺</span>
@@ -895,7 +908,7 @@ footer .sub { font-size: .9rem; opacity: .7; }
       <li class="tl-item"><div class="tl-time">07:00<small>日本 14:00</small></div><div class="tl-body"><div class="tl-title">ピレウス港着（クルーズ下船）</div><div class="tl-sub">上陸税 €3/人（船内口座より自動精算済み）</div></div></li>
       <li class="tl-item"><div class="tl-time">11:00<small>日本 18:00</small></div><div class="tl-body"><div class="tl-title">💰 船内クレジット 10,000pt 付与</div><div class="tl-sub">スパ・ショッピング等に使用可（下船前に使い切る）</div></div></li>
       <li class="tl-item"><div class="tl-time">午後<small></small></div><div class="tl-body"><div class="tl-title">ホテルチェックイン</div><div class="tl-sub">NLH モナスティラキ（15:00〜）</div></div></li>
-      <li class="tl-item"><div class="tl-time">夕方<small></small></div><div class="tl-body"><div class="tl-title">🍽️ ディナー</div><div class="tl-sub">Tzitzikas &amp; Mermigas（地元人気店）⭐4.4 ／ 要予約 +30 210 324 7607</div></div></li>
+      <li class="tl-item"><div class="tl-time">夕方<small></small></div><div class="tl-body"><div class="tl-title">🍽️ ディナー ✅路子様予約済み</div><div class="tl-sub">Tzitzikas &amp; Mermigas（地元人気店）⭐4.4 ／ 📞 +30 210 324 7607</div></div></li>
     </ul>
   </div>
 
@@ -906,7 +919,7 @@ footer .sub { font-size: .9rem; opacity: .7; }
       <li class="tl-item"><div class="tl-time">正午頃<small></small></div><div class="tl-body"><div class="tl-title">プラカ地区散策・ランチ</div><div class="tl-sub">タベルナでムサカ・タラモサラタなど</div></div></li>
       <li class="tl-item"><div class="tl-time">午後<small></small></div><div class="tl-body"><div class="tl-title">🛍️ モナスティラキ市場</div><div class="tl-sub">陶器・スパイス・シルバーアクセサリー。値段交渉あり</div></div></li>
       <li class="tl-item"><div class="tl-time">夕方<small></small></div><div class="tl-body"><div class="tl-title">🌅 リカヴィトスの丘</div><div class="tl-sub">アテネ随一の夕暮れ絶景。20時台まで明るい！</div></div></li>
-      <li class="tl-item"><div class="tl-time">19:00頃<small></small></div><div class="tl-body"><div class="tl-title">🍽️ Strofi ディナー</div><div class="tl-sub">アクロポリス眺望テラス ⭐4.4 ／ 要予約 +30 210 921 4130</div></div></li>
+      <li class="tl-item"><div class="tl-time">19:00頃<small></small></div><div class="tl-body"><div class="tl-title">🍽️ Strofi ディナー ✅路子様予約済み</div><div class="tl-sub">アクロポリス眺望テラス ⭐4.4 ／ 📞 +30 210 921 4130</div></div></li>
     </ul>
   </div>
 
@@ -956,8 +969,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     <div class="info orange" style="margin-top:10px">⚠️ 2025年4月以降、ダイナースクラブのPPは国内レストラン・リフレッシュ施設は利用不可。ラウンジのみ可。</div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== GUIDE ==================== -->
+<div class="tab-panel" id="tab-guide">
 <section id="guide">
   <div class="section-header">
     <span class="section-icon">📱</span>
@@ -1198,8 +1213,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
     </div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== CHECKLIST ==================== -->
+<div class="tab-panel" id="tab-checklist">
 <section id="checklist">
   <div class="section-header">
     <span class="section-icon">🧳</span>
@@ -1268,14 +1285,17 @@ footer .sub { font-size: .9rem; opacity: .7; }
       <li class="chk-item"><div class="chk-box"></div>乗船券（Boarding Form）2名分を<strong>印刷</strong>して持参</li>
       <li class="chk-item"><div class="chk-box"></div>荷物タグ4枚を<strong>印刷してスーツケースへ取り付け</strong></li>
       <li class="chk-item"><div class="chk-box done">✓</div>Costa Cruisesアプリ インストール済み（MyCosta）</li>
-      <li class="chk-item"><div class="chk-box"></div>Strofi・La Pepita・Bar del Pla <strong>レストラン予約</strong></li>
+      <li class="chk-item"><div class="chk-box done">✓</div>アテネ Strofi・Tzitzikas &amp; Mermigas <strong>レストラン予約済み</strong>（路子様）</li>
+      <li class="chk-item"><div class="chk-box"></div>バルセロナ Bar del Pla <strong>レストラン予約</strong>（要予約 +34 932 683 003）</li>
       <li class="chk-item"><div class="chk-box"></div>クレジットカード <strong>PIN確認</strong></li>
     </ul>
     <div class="info green" style="margin-top:12px">✅ 完了済み：海外旅行保険（TH02056789）・AFチケット（YZF7JW）・INNSiDEホテル・クルーズ代金・サグラダ・グエル公園・ツアー3本・各種パッケージ・<strong>ウェブチェックイン・乗船券発行（2名分）</strong></div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 <!-- ==================== DOCS ==================== -->
+<div class="tab-panel" id="tab-docs">
 <section id="docs">
   <div class="section-header">
     <span class="section-icon">📁</span>
@@ -1344,6 +1364,7 @@ footer .sub { font-size: .9rem; opacity: .7; }
     </div>
   </div>
 </section>
+</div><!-- /tab-panel -->
 
 </div><!-- /container -->
 
@@ -1354,5 +1375,19 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div style="margin-top:16px;font-size:.75rem;opacity:.45">最終更新：2026年4月3日（乗船手続き・Ta' Kolina予約追加）</div>
 </footer>
 
+
+<script>
+function showTab(id) {
+  // パネル切り替え
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  var panel = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  // ボタン切り替え
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  // ページ最上部へ
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
 </body>
 </html>
