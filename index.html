@@ -318,6 +318,13 @@ table tr:nth-child(even) td { background: var(--gray-50); }
 .paris-cat { font-size: 11px; background: var(--primary); color: #fff; display: inline-block; padding: 1px 7px; border-radius: 6px; margin-bottom: 4px; }
 .paris-desc { font-size: 12px; color: var(--gray-600); }
 
+/* MAP BUTTONS */
+.map-btn-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.map-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 7px; font-size: 12px; font-weight: 700; text-decoration: none; transition: opacity .15s; white-space: nowrap; }
+.map-btn:hover { opacity: .85; text-decoration: none; }
+.map-btn-google { background: #4285F4; color: #fff; }
+.map-btn-apple  { background: #1c1c1e; color: #fff; }
+
 /* FOOTER */
 footer { background: var(--primary-dark); color: rgba(255,255,255,.8); text-align: center; padding: 36px 20px; }
 footer .bon { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
@@ -603,12 +610,18 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="hotel-card">
     <div class="hotel-name">🏨 INNSiDE by Meliá Barcelona Aeropuerto（前泊 4/27）</div>
     <div class="hotel-detail">バルセロナ空港近く ｜ AF便22:45着後に宿泊<br>シャトルバス：T1 駐車場G バス停5番 ／ T2 白いキャノピー下（24時間・30〜50分間隔、予約不要）</div>
-    <div style="margin-top:8px"><a href="https://www.google.com/maps/search/INNSiDE+Melia+Barcelona+Aeropuerto" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:#4285F4;color:#fff;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">🗺️ Googleマップで開く</a></div>
+    <div class="map-btn-row">
+      <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/INNSiDE+by+Meli%C3%A1+Barcelona+Aeropuerto/@41.3007,2.0801,17z" target="_blank">🗺️ Google Maps</a>
+      <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3007,2.0801&q=INNSiDE+by+Meli%C3%A1+Barcelona+Aeropuerto" target="_blank">🍎 Apple Maps</a>
+    </div>
   </div>
   <div class="hotel-card">
     <div class="hotel-name">🏨 Hotel Barcelona Center（4/28〜4/30・2泊）</div>
     <div class="hotel-detail">Carrer de Balmes 103 ｜ Booking: 25100353319<br>🚇 アクセス：地下鉄L5 Hospital Clínic駅 徒歩3分 ／ L3 Diagonal駅 徒歩8分</div>
-    <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:8px"><a href="https://www.google.com/maps/search/Hotel+Barcelona+Center+Carrer+de+Balmes+103" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:#4285F4;color:#fff;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">🗺️ Googleマップで開く</a><a href="https://www.google.com/maps/dir/Barcelona+Airport+T1/Hotel+Barcelona+Center" target="_blank" style="display:inline-flex;align-items:center;gap:5px;background:#0891b2;color:#fff;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">🚌 空港→ホテル ルート</a></div>
+    <div class="map-btn-row">
+      <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Hotel+Barcelona+Center/@41.3897,2.1536,17z" target="_blank">🗺️ Google Maps</a>
+      <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3897,2.1536&q=Hotel+Barcelona+Center" target="_blank">🍎 Apple Maps</a>
+    </div>
   </div>
 
   <div class="card">
@@ -637,7 +650,11 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="tl-body">
           <div class="tl-title">⭐ サグラダ・ファミリア入場</div>
           <div class="tl-sub">チケット予約済（Code: <strong>94488645</strong>）｜ 地下鉄L2/L5 Sagrada Família駅</div>
-          <div class="btn-row"><a class="btn btn-primary" href="files/sagrada_familia.pdf">🎫 入場チケット</a><a class="btn btn-outline" href="https://maps.google.com/?q=Sagrada+Familia,+Barcelona" target="_blank">📍 地図</a></div>
+          <div class="btn-row"><a class="btn btn-primary" href="files/sagrada_familia.pdf">🎫 入場チケット</a></div>
+          <div class="map-btn-row">
+            <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/La+Sagrada+Fam%C3%ADlia/@41.4036,2.1744,17z" target="_blank">🗺️ Google Maps</a>
+            <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.4036,2.1744&q=Sagrada+Familia" target="_blank">🍎 Apple Maps</a>
+          </div>
         </div>
       </li>
       <li class="tl-item">
@@ -649,7 +666,11 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="tl-body">
           <div class="tl-title">⭐ グエル公園入場</div>
           <div class="tl-sub">チケット予約済（Locator: <strong>700809431070</strong>）⚠️ <strong>30分以内に入場</strong> ｜ バス24番orL3 Lesseps駅徒歩15分</div>
-          <div class="btn-row"><a class="btn btn-primary" href="files/guell_park.pdf">🎫 入場チケット</a><a class="btn btn-outline" href="https://maps.google.com/?q=Park+Guell,+Barcelona" target="_blank">📍 地図</a></div>
+          <div class="btn-row"><a class="btn btn-primary" href="files/guell_park.pdf">🎫 入場チケット</a></div>
+          <div class="map-btn-row">
+            <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Park+G%C3%BCell/@41.4145,2.1527,17z" target="_blank">🗺️ Google Maps</a>
+            <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.4145,2.1527&q=Park+G%C3%BCell" target="_blank">🍎 Apple Maps</a>
+          </div>
         </div>
       </li>
       <li class="tl-item">
@@ -669,7 +690,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="rest-addr">Carrer de Mallorca 236 ｜ €€ €15〜25</div>
         <div class="rest-desc">バルセロナ随一の人気タパスバー。ロブスターライス・牛フィレとフォアグラのモンタディート</div>
         <div class="rest-note">予約不可・18時台推奨</div>
-        <div class="btn-row"><a class="btn btn-outline" href="https://maps.apple.com/?ll=41.3924,2.1609&q=Cerveceria+Catalana" target="_blank">🗺️ 地図</a></div>
+        <div class="map-btn-row">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Cerveceria+Catalana/@41.3924,2.1609,17z" target="_blank">🗺️ Google Maps</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3924,2.1609&q=Cerveceria+Catalana" target="_blank">🍎 Apple Maps</a>
+        </div>
       </div>
       <div class="rest-card">
         <div class="rest-emoji">🥩</div>
@@ -679,7 +703,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="rest-desc">グラシア地区。創作タパス。グエル公園帰りに立ち寄りやすい</div>
         <div class="rest-note">⚠️ 観光客が多く騒がしい傾向あり。落ち着いた食事はBar del Plaを推奨</div>
         <div class="rest-note">📞 +34 932 384 893（要予約）</div>
-        <div class="btn-row"><a class="btn btn-outline" href="https://maps.apple.com/?ll=41.3980,2.1610&q=La+Pepita+Barcelona" target="_blank">🗺️ 地図</a></div>
+        <div class="map-btn-row">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/La+Pepita/@41.3980,2.1610,17z" target="_blank">🗺️ Google Maps</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3980,2.1610&q=La+Pepita+Barcelona" target="_blank">🍎 Apple Maps</a>
+        </div>
       </div>
       <div class="rest-card">
         <div class="rest-emoji">🍷</div>
@@ -688,7 +715,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
         <div class="rest-addr">Carrer de Montcada 2 ｜ €€ €15〜30</div>
         <div class="rest-desc">ゴシック地区。きのこワサビソース・ローストビーフ名物。自然派ワイン充実</div>
         <div class="rest-note">要予約 +34 932 683 003 ／ 日曜定休</div>
-        <div class="btn-row"><a class="btn btn-outline" href="https://maps.apple.com/?ll=41.3834,2.1817&q=Bar+del+Pla+Barcelona" target="_blank">🗺️ 地図</a></div>
+        <div class="map-btn-row">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Bar+del+Pla/@41.3834,2.1817,17z" target="_blank">🗺️ Google Maps</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3834,2.1817&q=Bar+del+Pla+Barcelona" target="_blank">🍎 Apple Maps</a>
+        </div>
       </div>
     </div>
   </div>
@@ -820,8 +850,17 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head marseille">🇫🇷 マルセイユ（5/1）<span>旧港・ノートルダム・ド・ラ・ガルド聖堂</span></div>
     <div class="port-body">
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Vieux-Port+de+Marseille/@43.2951,5.3747,16z" target="_blank">🚢 Google Maps（旧港）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=43.2951,5.3747&q=Vieux-Port+Marseille" target="_blank">🍎 Apple Maps</a>
+      </div>
       <div class="food-grid">
-        <div class="food-card"><div class="food-emoji">🐟</div><div class="food-name">ブイヤベース（Bouillabaisse）</div><div class="food-desc">マルセイユ発祥の魚介スープ。ルイユ（唐辛子マヨ）をパンに塗って</div><a class="food-link" href="https://maps.apple.com/?ll=43.2946,5.3743&q=Le+Miramar+Marseille" target="_blank">📍 Le Miramar（旧港・名店）</a></div>
+        <div class="food-card"><div class="food-emoji">🐟</div><div class="food-name">ブイヤベース（Bouillabaisse）</div><div class="food-desc">マルセイユ発祥の魚介スープ。ルイユ（唐辛子マヨ）をパンに塗って</div>
+          <div class="map-btn-row" style="margin-top:6px">
+            <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Le+Miramar/@43.2946,5.3743,17z" target="_blank">🗺️ Google（Le Miramar）</a>
+            <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=43.2946,5.3743&q=Le+Miramar+Marseille" target="_blank">🍎 Apple Maps</a>
+          </div>
+        </div>
         <div class="food-card"><div class="food-emoji">🌿</div><div class="food-name">タプナード＆サヴォン</div><div class="food-desc">黒オリーブペーストはバゲットに。石鹸（サヴォン）はプロヴァンスの定番土産</div></div>
       </div>
       <div class="info blue" style="margin-top:10px">🎁 土産：🧼 サヴォン・ド・マルセイユ ／ 🌿 プロヴァンスのハーブ塩・タプナード ／ 🍬 カリソン（エクス産が本家）</div>
@@ -831,6 +870,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head monaco">🎰 モナコ（5/2）<span>カジノ・王宮・F1サーキット</span></div>
     <div class="port-body">
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Monaco-Ville/@43.7319,7.4199,16z" target="_blank">🚢 Google Maps（モナコ旧市街）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=43.7319,7.4199&q=Monaco+Ville" target="_blank">🍎 Apple Maps</a>
+      </div>
       <div class="food-grid">
         <div class="food-card"><div class="food-emoji">🥗</div><div class="food-name">ニース風サラダ（Salade Niçoise）</div><div class="food-desc">ツナ・ゆで卵・アンチョビ・オリーブの南仏サラダ。モナコ市街のカフェでランチに</div></div>
         <div class="food-card"><div class="food-emoji">🍦</div><div class="food-name">ソッカ（Socca）＆ジェラート</div><div class="food-desc">ひよこ豆クレープはモナコ・ニースのストリートフード</div></div>
@@ -842,6 +885,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head rome">🏛️ ローマ（5/3）<span>コロッセオ・バチカン・スペイン広場</span></div>
     <div class="port-body">
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Colosseum/@41.8902,12.4923,17z" target="_blank">🗺️ Google Maps（コロッセオ）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.8902,12.4923&q=Colosseum+Rome" target="_blank">🍎 Apple Maps</a>
+      </div>
       <div class="food-grid">
         <div class="food-card"><div class="food-emoji">🍝</div><div class="food-name">カチョ・エ・ペペ（Cacio e Pepe）</div><div class="food-desc">チーズと黒胡椒だけのローマ式パスタ。シンプルで奥深い絶品</div></div>
         <div class="food-card"><div class="food-emoji">🍦</div><div class="food-name">ジェラート</div><div class="food-desc">ピスタチオ・ストラッチャテッラが定番。フリータイムのスペイン広場付近で</div></div>
@@ -853,6 +900,10 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head messina">🇮🇹 メッシーナ・シチリア（5/4・自由行動）<span>ドゥオーモ・グラニータ</span></div>
     <div class="port-body">
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Porto+di+Messina/@38.1905,15.5577,16z" target="_blank">🚢 Google Maps（メッシーナ港）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=38.1905,15.5577&q=Porto+di+Messina" target="_blank">🍎 Apple Maps</a>
+      </div>
       <div class="info blue">🍧 グラニータ＋ブリオッシュ（レモン・アーモンド・コーヒー味）⭐必食 ／ 🍚 アランチーニ（揚げライスボール €1〜2）<br>
       🎁 土産：🍋 レモンチェッロ ／ 🍫 モディカチョコレート（古代製法） ／ 🌰 マルトラーナの菓子</div>
       <div class="info gold" style="margin-top:8px">⏰ ドゥオーモの時計台の仕掛けは<strong>正午と正午すぎ</strong>に動く！</div>
@@ -862,10 +913,13 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head valletta">🇲🇹 ヴァレッタ・マルタ（5/5・自由行動）<span>世界遺産の首都</span></div>
     <div class="port-body">
-      <div style="margin-bottom:10px;display:flex;flex-wrap:wrap;gap:8px">
-        <a href="https://www.google.com/maps/search/Valletta+Cruise+Terminal+Grand+Harbour+Malta" target="_blank" style="display:inline-flex;align-items:center;gap:4px;background:#4285F4;color:#fff;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">🚢 乗降場（グランド・ハーバー）</a>
-        <a href="https://www.google.com/maps/search/St+John+Cathedral+Valletta+Malta" target="_blank" style="display:inline-flex;align-items:center;gap:4px;background:#0891b2;color:#fff;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">⛪ 聖ヨハネ大聖堂</a>
-        <a href="https://www.google.com/maps/search/Upper+Barrakka+Gardens+Valletta" target="_blank" style="display:inline-flex;align-items:center;gap:4px;background:#0891b2;color:#fff;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none">🌿 バラッカ庭園</a>
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Valletta+Ferry+Terminal/@35.8991,14.5145,17z" target="_blank">🚢 Google Maps（ヴァレッタ港）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=35.8991,14.5145&q=Valletta+Grand+Harbour" target="_blank">🍎 Apple Maps</a>
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/St+John%27s+Co-Cathedral/@35.8993,14.5128,17z" target="_blank">⛪ Google（聖ヨハネ大聖堂）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=35.8993,14.5128&q=St+John%27s+Co-Cathedral+Valletta" target="_blank">🍎 Apple Maps</a>
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Upper+Barrakka+Gardens/@35.8972,14.5125,17z" target="_blank">🌿 Google（バラッカ庭園）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=35.8972,14.5125&q=Upper+Barrakka+Gardens" target="_blank">🍎 Apple Maps</a>
       </div>
       <div class="info green" style="margin-bottom:10px">
         🍽️ <strong>ランチ予約済み：Ta' Kolina（タ・コリーナ）</strong><br>
@@ -882,6 +936,12 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="port-block">
     <div class="port-head heraklion">🇬🇷 ヘラクリオン・クレタ島（5/7・自由行動）<span>クノッソス宮殿 ⚠️ 上陸税€3/人</span></div>
     <div class="port-body">
+      <div class="map-btn-row" style="margin-bottom:12px">
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Port+of+Heraklion/@35.3453,25.1348,16z" target="_blank">🚢 Google Maps（ヘラクリオン港）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=35.3453,25.1348&q=Port+of+Heraklion" target="_blank">🍎 Apple Maps</a>
+        <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Palace+of+Knossos/@35.2986,25.1636,17z" target="_blank">🏛️ Google（クノッソス宮殿）</a>
+        <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=35.2986,25.1636&q=Palace+of+Knossos" target="_blank">🍎 Apple Maps</a>
+      </div>
       <div class="info blue">🫒 ダコス（大麦ラスク×トマト×フェタのクレタ郷土サラダ） ／ 🍯 クレタ産タイム蜂蜜（世界的評価）<br>
       🎁 土産：🫒 クレタ産EVOO ／ 🌿 クレタハーブティー（ディクタモス） ／ 🍪 ハニーパイ</div>
     </div>
@@ -900,12 +960,21 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="hotel-card">
     <div class="hotel-name">🏨 NLH モナスティラキ（5/8〜10・2泊）</div>
     <div class="hotel-detail">35 Athinas, Athens ｜ 旅程番号: 73282963700037 ｜ プレミアムスイート・朝食付き<br>チェックイン 15:00〜 ／ チェックアウト 11:00</div>
+    <div class="map-btn-row">
+      <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/NLH+Monastiraki/@37.9766,23.7229,17z" target="_blank">🗺️ Google Maps</a>
+      <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=37.9766,23.7229&q=NLH+Monastiraki+Athens" target="_blank">🍎 Apple Maps</a>
+    </div>
   </div>
 
   <div class="card">
     <div class="card-title">5月8日（金）下船・アテネ到着</div>
     <ul class="timeline">
-      <li class="tl-item"><div class="tl-time">07:00<small>日本 14:00</small></div><div class="tl-body"><div class="tl-title">ピレウス港着（クルーズ下船）</div><div class="tl-sub">上陸税 €3/人（船内口座より自動精算済み）</div></div></li>
+      <li class="tl-item"><div class="tl-time">07:00<small>日本 14:00</small></div><div class="tl-body"><div class="tl-title">ピレウス港着（クルーズ下船）</div><div class="tl-sub">上陸税 €3/人（船内口座より自動精算済み）</div>
+        <div class="map-btn-row" style="margin-top:6px">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Port+of+Piraeus/@37.9477,23.6380,15z" target="_blank">🚢 Google Maps（ピレウス港）</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=37.9477,23.6380&q=Port+of+Piraeus" target="_blank">🍎 Apple Maps</a>
+        </div>
+      </div></li>
       <li class="tl-item"><div class="tl-time">11:00<small>日本 18:00</small></div><div class="tl-body"><div class="tl-title">💰 船内クレジット 10,000pt 付与</div><div class="tl-sub">スパ・ショッピング等に使用可（下船前に使い切る）</div></div></li>
       <li class="tl-item"><div class="tl-time">午後<small></small></div><div class="tl-body"><div class="tl-title">ホテルチェックイン</div><div class="tl-sub">NLH モナスティラキ（15:00〜）</div></div></li>
       <li class="tl-item"><div class="tl-time">夕方<small></small></div><div class="tl-body"><div class="tl-title">🍽️ ディナー ✅路子様予約済み</div><div class="tl-sub">Tzitzikas &amp; Mermigas（地元人気店）⭐4.4 ／ 📞 +30 210 324 7607<br>Mitropoleos 12, Athens</div><div class="btn-row"><a class="btn btn-primary" href="https://maps.google.com/?cid=7181348896418074561" target="_blank">🗺️ Googleマップで開く</a><a class="btn btn-outline" href="https://maps.apple.com/?ll=37.9753,23.7327&q=Tzitzikas+%26+Mermigas" target="_blank">🍎 Appleマップ</a></div></div></li>
@@ -915,7 +984,12 @@ footer .sub { font-size: .9rem; opacity: .7; }
   <div class="card">
     <div class="card-title">5月9日（土）アテネ観光 — 日没 20:17</div>
     <ul class="timeline">
-      <li class="tl-item"><div class="tl-time">午前<small></small></div><div class="tl-body"><div class="tl-title">⭐ アクロポリス・パルテノン神殿</div><div class="tl-sub">朝8〜9時が空いていておすすめ。帽子・水必携<br><a class="btn btn-outline" style="margin-top:6px" href="https://eshop.culture.gr/" target="_blank">🎟️ 公式チケット</a></div></div></li>
+      <li class="tl-item"><div class="tl-time">午前<small></small></div><div class="tl-body"><div class="tl-title">⭐ アクロポリス・パルテノン神殿</div><div class="tl-sub">朝8〜9時が空いていておすすめ。帽子・水必携<br><a class="btn btn-outline" style="margin-top:6px" href="https://eshop.culture.gr/" target="_blank">🎟️ 公式チケット</a></div>
+        <div class="map-btn-row" style="margin-top:6px">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Acropolis+of+Athens/@37.9715,23.7267,17z" target="_blank">🗺️ Google Maps</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=37.9715,23.7267&q=Acropolis+Athens" target="_blank">🍎 Apple Maps</a>
+        </div>
+      </div></li>
       <li class="tl-item"><div class="tl-time">正午頃<small></small></div><div class="tl-body"><div class="tl-title">プラカ地区散策・ランチ</div><div class="tl-sub">タベルナでムサカ・タラモサラタなど</div></div></li>
       <li class="tl-item"><div class="tl-time">午後<small></small></div><div class="tl-body"><div class="tl-title">🛍️ モナスティラキ市場</div><div class="tl-sub">陶器・スパイス・シルバーアクセサリー。値段交渉あり</div></div></li>
       <li class="tl-item"><div class="tl-time">夕方<small></small></div><div class="tl-body"><div class="tl-title">🌅 リカヴィトスの丘</div><div class="tl-sub">アテネ随一の夕暮れ絶景。20時台まで明るい！</div></div></li>
@@ -928,7 +1002,12 @@ footer .sub { font-size: .9rem; opacity: .7; }
     <ul class="timeline">
       <li class="tl-item"><div class="tl-time">〜11:00</div><div class="tl-body"><div class="tl-title">ホテルチェックアウト</div><div class="tl-sub">荷物は最終日まで預かってもらえる場合も</div></div></li>
       <li class="tl-item"><div class="tl-time">午前</div><div class="tl-body"><div class="tl-title">🛍️ 最終お土産</div><div class="tl-sub">AB Vassilopoulos（スーパー）でオリーブオイル・ハチミツ・フェタチーズ</div></div></li>
-      <li class="tl-item"><div class="tl-time">14:00頃<small>日本 21:00</small></div><div class="tl-body"><div class="tl-title">空港へ（タクシー推奨）</div><div class="tl-sub">約35〜40分 €40〜50</div></div></li>
+      <li class="tl-item"><div class="tl-time">14:00頃<small>日本 21:00</small></div><div class="tl-body"><div class="tl-title">空港へ（タクシー推奨）</div><div class="tl-sub">約35〜40分 €40〜50</div>
+        <div class="map-btn-row" style="margin-top:6px">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Athens+International+Airport/@37.9364,23.9445,15z" target="_blank">✈️ Google Maps（アテネ空港）</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=37.9364,23.9445&q=Athens+International+Airport" target="_blank">🍎 Apple Maps</a>
+        </div>
+      </div></li>
       <li class="tl-item"><div class="tl-time">18:35<small>日本 翌1:35</small></div><div class="tl-body"><div class="tl-title">✈️ アテネ空港出発 AF1833</div><div class="tl-sub">アテネ → パリCDG 2F 21:05着（飛行約3時間30分）</div></div></li>
       <li class="tl-item"><div class="tl-time">23:00<small>日本 翌6:00</small></div><div class="tl-body"><div class="tl-title">✈️ パリCDG発 AF0274</div><div class="tl-sub">CDG 2E 23:00発 → 羽田T3 翌5/11 19:40着<br>⚠️ トランジット約2時間（時間短め）</div></div></li>
     </ul>
@@ -1003,7 +1082,12 @@ footer .sub { font-size: .9rem; opacity: .7; }
       <li class="proc-item"><div class="proc-badge pre">前</div><div class="proc-body"><div class="proc-title">✅ 乗船券（Boarding Form）印刷済み確認</div><div class="proc-desc">2名分それぞれ1枚ずつ印刷。<strong>乗船時に必ず提示が必要</strong>（「MUST BE PRESENTED WHEN BOARDING」）。アプリでのデジタル表示も可。</div></div></li>
       <li class="proc-item"><div class="proc-badge pre">前</div><div class="proc-body"><div class="proc-title">✅ 荷物タグを事前に印刷・取り付け</div><div class="proc-desc">康司様・路子様それぞれ2枚ずつ（計4枚）。出発前にスーツケースへ取り付けること。港でも配布あり。</div></div></li>
       <li class="proc-item"><div class="proc-badge pre">前</div><div class="proc-body"><div class="proc-title">スマートフォンのローミング設定をOFF</div><div class="proc-desc">洋上ではモバイルネットワークをONのままにすると衛星回線に接続され高額請求になる場合あり。機内モードにしてWi-Fiのみ使用すること。</div></div></li>
-      <li class="proc-item"><div class="proc-badge">当</div><div class="proc-body"><div class="proc-title">11:30 チェックイン開始 → <strong>13:00頃到着</strong>を目安に</div><div class="proc-desc">バルセロナ クルーズターミナル（D/E予定）：Moll d'Adossat, 1 08039 Barcelona。<strong>チェックイン締切は15:00。</strong>時間内に完了しないと乗船不可。</div></div></li>
+      <li class="proc-item"><div class="proc-badge">当</div><div class="proc-body"><div class="proc-title">11:30 チェックイン開始 → <strong>13:00頃到着</strong>を目安に</div><div class="proc-desc">バルセロナ クルーズターミナル（D/E予定）：Moll d'Adossat, 1 08039 Barcelona。<strong>チェックイン締切は15:00。</strong>時間内に完了しないと乗船不可。</div>
+        <div class="map-btn-row" style="margin-top:8px">
+          <a class="map-btn map-btn-google" href="https://www.google.com/maps/place/Terminal+A+Port+de+Barcelona/@41.3453,2.1758,17z" target="_blank">🚢 Google Maps（バルセロナ港）</a>
+          <a class="map-btn map-btn-apple" href="https://maps.apple.com/?ll=41.3453,2.1758&q=Moll+Adossat+Barcelona+Cruise+Terminal" target="_blank">🍎 Apple Maps</a>
+        </div>
+      </div></div></li>
       <li class="proc-item"><div class="proc-badge">当</div><div class="proc-body"><div class="proc-title">ターミナルで荷物を預ける</div><div class="proc-desc">荷物タグをつけたスーツケースをCostaスタッフへ預けるとキャビンへ直接届く。<strong>パスポート・貴重品・薬・翌日の服・乗船券は必ず手荷物へ！</strong>手荷物サイズ上限：55×35×25cm。</div></div></li>
       <li class="proc-item"><div class="proc-badge">当</div><div class="proc-body"><div class="proc-title">チェックインカウンター</div><div class="proc-desc">乗船券（Boarding Form）とパスポートを提示。<strong>健康質問書</strong>が配布される場合あり → 全項目「No」にチェックし日付・サインを記入（各自1枚）。</div></div></li>
       <li class="proc-item"><div class="proc-badge">当</div><div class="proc-body"><div class="proc-title">セキュリティチェック・乗船</div><div class="proc-desc">手荷物X線検査あり。<strong>ヘアアイロン・ドライヤー・電気ケトル等の加熱機器は持ち込み禁止</strong>（発見次第没収）。コスタカードはキャビン内に準備されている。</div></div></li>
